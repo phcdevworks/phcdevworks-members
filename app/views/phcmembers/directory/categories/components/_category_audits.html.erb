@@ -1,0 +1,25 @@
+<div class="table-responsive">
+	<table class="table table-striped table-bordered table-hover">
+		<tbody>
+			<% @directory_category_versions.each do |directory_category_version| %>
+				<tr>
+					<td>
+						<span class="label label-primary"><%= directory_category_version.event.humanize %></span>
+					</td>
+					<td>
+						CATEGORY EVENT ID#<%= directory_category_version.id %>
+					</td>
+					<td>
+						<%= directory_category_version.event.humanize %> Category Information
+					</td>
+					<td>
+						<%= directory_category_version.whodunnit %>
+					</td>
+					<td>
+						<%= l(directory_category_version.created_at, format: "%-d/%m/%Y") %> - <%= l(directory_category_version.created_at, format: "%H:%M %Z") %>
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

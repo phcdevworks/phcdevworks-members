@@ -1,0 +1,68 @@
+<!-- Form - Member - Listing -->
+<%= form_with(model: [ @member_profile, @member_listing], url: form_url, local: true) do |form| %>
+
+	<!-- PHCNotifi Render Validation -->
+	<%= render 'phcnotifi/default/validations', :object => @member_listing %>
+	<!-- PHCNotifi Render Validation -->
+
+	<!-- Form Input Fields -->
+	<div class="form-group field_with_errors">
+		<%= form.label :listing_company_name, "Company Name" %>
+		<%= form.text_field :listing_company_name, class: "form-control", placeholder: "Business/Organization: Name" %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= form.label :listing_contact_name, "Contact Name" %>
+		<%= form.text_field :listing_contact_name, class: "form-control", placeholder: "Business/Organization: Contact Person" %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= form.label :listing_address_line_1, "Address Line 1" %>
+		<%= form.text_field :listing_address_line_1, class: "form-control", placeholder: "Location: Street Address" %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= form.label :listing_address_line_2, "Address Line 2" %>
+		<%= form.text_field :listing_address_line_2, class: "form-control", placeholder: "Location: Box - Suite - Floor" %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= form.label :listing_city, "City" %>
+		<%= form.text_field :listing_city, class: "form-control", placeholder: "Location: City" %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= form.label :listing_province, "Province/State" %>
+		<%= form.text_field :listing_province, class: "form-control", placeholder: "Location: Province/State" %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= form.label :listing_country, "Country" %>
+		<%= form.text_field :listing_country, class: "form-control", placeholder: "Country" %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= form.label :listing_postal_code, "Postal Code" %><br>
+		<%= form.text_field :listing_postal_code, class: "form-control", placeholder: "Location: PostalCode" %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= form.label :listing_phone, "Business Phone Number" %>
+		<%= form.text_field :listing_phone, class: "form-control", placeholder: "Business/Organization: PhoneNumber (Public)" %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= form.label :listing_contact_email, "Business General Email" %>
+		<%= form.text_field :listing_contact_email, class: "form-control", placeholder: "Business/Organization: Email Address (Public)" %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= form.label :listing_website, "Business Website" %>
+		<%= form.text_field :listing_website, class: "form-control", placeholder: "Business/Organization: Website (Public)" %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= form.collection_check_boxes :category_ids, Phcmembers::Directory::Category.all, :id, :category_name do |listing_category| %>
+			<%= listing_category.check_box %>
+			<%= listing_category.label %><br>
+		<% end %>
+	</div>
+	<!-- Form Input Fields -->
+
+	<!-- Form Submition Button -->
+	<div class="actions">
+		<%= form.submit class: "btn btn-primary btn-md" %>
+	</div>
+	<!-- For Submition Button -->
+
+<% end %>
+<!-- Form - Member - Listing -->

@@ -1,0 +1,189 @@
+<!-- Sidebar for PHCDevworks Engines -->
+<div data-scrollbar="true" data-height="100%">
+
+  <!-- Sidebar - User Profile Menu -->
+  <ul class="nav">
+    <% if current_user %>
+      <li class="nav-profile">
+        <a href="javascript:;" data-toggle="nav-profile">
+          <div class="cover with-shadow"></div>
+          <div class="image">
+            <%= image_tag current_user.gravatar_url %>
+          </div>
+          <div class="info">
+            <b class="caret pull-right"></b>
+            <%= current_user.firstname + ' ' + current_user.lastname  %>
+            <small><%= current_user.username %></small>
+          </div>
+        </a>
+      </li>
+      <li>
+        <ul class="nav nav-profile">
+          <li>
+            <%= link_to phcaccounts.edit_user_registration_path do %>
+              <i class="fas fa-cogs"></i> Account Settings
+            <% end %>
+          </li>
+          <li>
+            <%= link_to phcaccounts.destroy_user_session_path do %>
+              <i class="fas fa-sign-out-alt"></i> Logout
+            <% end %>
+          </li>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+  <!-- Sidebar - User Profile Menu -->
+
+  <!-- Sidebar - Sidebar Navigation -->
+  <ul class="nav">
+
+    <% if defined?phccodesnipper %>
+      <!-- Sidebar - Sidebar Navigation - PHCCodeSnipper -->
+      <li class="nav-header">Code Snippets</li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fas fa-newspaper"></i>
+          <span>Code Snippets</span>
+        </a>
+        <ul class="sub-menu">
+          <li class="<%= phc_menus_active_controller('phccodesnipper/script/posts') %>"><%= link_to 'Snippet Index', phccodesnipper.script_snippets_path %></li>
+          <li class="<%= phc_menus_active_controller('phccodesnipper/script/posts#new') %>"><%= link_to 'New Snippet', phccodesnipper.new_script_snippet_path %></li>
+        </ul>
+      </li>
+      <!-- Sidebar - Sidebar Navigation - PHCCodeSnipper -->
+    <% end %>
+
+    <% if defined?phcpress %>
+      <!-- Sidebar - Sidebar Navigation - PHCPress -->
+      <li class="nav-header">Article Management</li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fas fa-newspaper"></i>
+          <span>Article Posts</span>
+        </a>
+        <ul class="sub-menu">
+          <li class="<%= phc_menus_active_controller('phcpress/article/posts') %>"><%= link_to('Article Index', phcpress.article_posts_path) %></li>
+          <li class="<%= phc_menus_active_controller('phcpress/article/posts#new') %>"><%= link_to('New Aritcle', phcpress.new_article_post_path) %></li>
+        </ul>
+      </li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fas fa-sitemap"></i>
+          <span>Article Categories</span>
+        </a>
+        <ul class="sub-menu">
+          <li class="<%= phc_menus_active_controller('phcpress/article/categories') %>"><%= link_to('Category Index', phcpress.article_categories_path) %></li>
+          <li class="<%= phc_menus_active_controller('phcpress/article/categories#new') %>"><%= link_to('New Category', phcpress.new_article_category_path) %></li>
+        </ul>
+      </li>
+      <!-- Sidebar - Sidebar Navigation - PHCPress -->
+    <% end %>
+
+    <% if defined?phcmembers %>
+      <!-- Sidebar - Sidebar Navigation - PHCMembers -->
+      <li class="nav-header">Membership Manager</li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fas fa-users"></i>
+          <span>Member's Data</span>
+        </a>
+        <ul class="sub-menu">
+          <li class="<%= phc_menus_active_controller('phcmembers/member/profiles') %>"><%= link_to('Profile Index', phcmembers.member_profiles_path) %></li>
+          <li class="<%= phc_menus_active_controller('phcmembers/member/profiles#new') %>"><%= link_to('New Member Profile', phcmembers.new_member_profile_path) %></li>
+        </ul>
+      </li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fas fa-list-alt"></i>
+          <span>Member's Directory</span>
+        </a>
+        <ul class="sub-menu">
+          <li class="<%= phc_menus_active_controller('phcmembers/directory/categories') %>"><%= link_to('Directory Index', phcmembers.directory_categories_path) %></li>
+          <li class="<%= phc_menus_active_controller('phcmembers/directory/categories#new') %>"><%= link_to('New Directory Listing', phcmembers.new_directory_category_path) %></li>
+        </ul>
+      </li>
+      <!-- Sidebar - Sidebar Navigation - PHCMembers -->
+    <% end %>
+
+    <% if defined?phcscriptcdn %>
+      <!-- Sidebar - Sidebar Navigation - PHCScriptCDN -->
+      <li class="nav-header">Script Management</li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fas fa-newspaper"></i>
+          <span>Script Posts</span>
+        </a>
+        <ul class="sub-menu">
+          <li class="<%= phc_menus_active_controller('phcscriptcdn/script/listings') %>"><%= link_to "All Script Listings", phcscriptcdn.script_listings_path %></li>
+          <li class="<%= phc_menus_active_controller('phcscriptcdn/script/listings#new') %>"><%= link_to "Add a New Listing", phcscriptcdn.new_script_listing_path %></li>
+        </ul>
+      </li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fas fa-sitemap"></i>
+          <span>Script Extras</span>
+        </a>
+        <ul class="sub-menu">
+          <li class="<%= phc_menus_active_controller('phcscriptcdn/script/authors') %>"><%= link_to "Script Authors", phcscriptcdn.script_authors_path %></li>
+          <li class="<%= phc_menus_active_controller('phcscriptcdn/script/licences') %>"><%= link_to "Script Licences", phcscriptcdn.script_licences_path %></li>
+          <li class="<%= phc_menus_active_controller('phcscriptcdn/script/extensions') %>"><%= link_to "Script Extensions", phcscriptcdn.script_extensions_path %></li>
+          <li class="<%= phc_menus_active_controller('phcscriptcdn/script/versions') %>"><%= link_to "Script Versions", phcscriptcdn.script_versions_path %></li>
+        </ul>
+      </li>
+      <!-- Sidebar - Sidebar Navigation - PHCScriptCDN -->
+    <% end %>
+
+    <% if current_user && current_user.admin? %>
+      <!-- Sidebar - Sidebar Navigation - PHCAccounts Admin Options -->
+      <li class="nav-header">User Administration</li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fas fa-user"></i>
+          <span>Admin</span>
+        </a>
+        <ul class="sub-menu">
+          <li class="<%= phc_menus_active_controller('phcaccounts/admin/users') %>"><%= link_to 'User List', phcaccounts.admin_users_path %></li>
+        </ul>
+      </li>
+      <!-- Sidebar - Sidebar Navigation - PHCAccounts Admin Options -->
+    <% end %>
+
+    <% if current_user %>
+      <!-- Sidebar - Sidebar Navigation - PHCAccounts User Options -->
+      <li class="nav-header">Your Account</li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fas fa-user"></i>
+          <span>Accounts Settings</span>
+        </a>
+        <ul class="sub-menu">
+          <li class="<%= phc_menus_active_controller('phcaccounts/user/edit') %>"><%= link_to 'Settings', phcaccounts.edit_user_registration_path %></li>
+          <li class="<%= phc_menus_active_controller('phcaccounts/user/new') %>"><%= link_to 'Logout', phcaccounts.destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </li>
+      <!-- Sidebar - Sidebar Navigation - PHCAccounts User Options -->
+    <% end %>
+
+    <!-- Sidebar - Sidebar Minifier -->
+    <li>
+      <a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify">
+        <i class="fa fa-angle-double-left"></i>
+      </a>
+    </li>
+    <!-- Sidebar - Sidebar Minifier -->
+
+  </ul>
+  <!-- Sidebar - Sidebar Navigation -->
+
+</div>
+<!-- Sidebar for PHCDevworks Engines -->

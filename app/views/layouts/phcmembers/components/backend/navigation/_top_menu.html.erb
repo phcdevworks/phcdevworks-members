@@ -1,0 +1,37 @@
+<!-- Topbar - Navigation Header -->
+<div class="navbar-header">
+  <%= link_to phcmembers.member_profiles_path, class: "navbar-brand" do %>
+    <strong>PHC</strong>Members
+  <% end %>
+  <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+</div>
+<!-- Topbar - Navigation Header -->
+
+<!-- Topbar - Navigation Main -->
+<% if current_user %>
+  <ul class="navbar-nav navbar-right">
+
+    <!-- Topbar - Navigation Main - User Menu -->
+    <li class="dropdown navbar-user">
+      <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+        <%= image_tag current_user.gravatar_url %>
+        <span class="d-none d-md-inline"><%= current_user.firstname + ' ' + current_user.lastname  %></span> <b class="caret"></b>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right">
+        <%= link_to phcaccounts.edit_user_registration_path, class: "dropdown-item" do %>
+          <i class="fas fa-cogs"></i> Account Settings
+        <% end %>
+        <%= link_to phcaccounts.destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
+          <i class="fas fa-sign-out-alt"></i> Logout
+        <% end %>
+      </div>
+    </li>
+    <!-- Topbar - Navigation Main - User Menu -->
+
+  </ul>
+<% end %>
+<!-- Topbar - Navigation Main -->

@@ -1,0 +1,52 @@
+<!-- Title System -->
+<% phc_title "Directory Category Manager" %>
+<% phc_title_tagline "Web Directory Category Index" %>
+<% phc_breadcrumb_one link_to "Dashboard", phcmembers.dashboard_path %>
+<% phc_breadcrumb_two yield(:phc_title_tagline) %>
+<!-- Title System -->
+
+<!-- Page Bradcrumbs -->
+<ol class="breadcrumb pull-right">
+  <li class="breadcrumb-item"><%= yield(:phc_breadcrumb_one) %></li>
+  <li class="breadcrumb-item active"><%= yield(:phc_breadcrumb_two) %></li>
+</ol>
+<!-- Page Bradcrumbs -->
+
+<!-- Page Header -->
+<h1 class="page-header"><%= yield(:phc_title) %></h1>
+<!-- Page Header -->
+
+<!-- Page & Panel Content -->
+<div class="panel panel-inverse">
+  <!-- Panel Heading -->
+  <div class="panel-heading">
+    <div class="panel-heading-btn">
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+    </div>
+    <h4 class="panel-title"><%= yield(:phc_title_tagline) %></h4>
+  </div>
+  <!-- Panel Heading -->
+  <!-- Panel Body -->
+  <div class="panel-body">
+		<!-- Un-Ordered List - Listing Categories -->
+		<ul class="list-group">
+			<% @directory_categories.each do |directory_category| %>
+				<li class="list-group-item">
+					<span class="badge badge-default badge-roundless"><%= directory_category.listings.count %></span></span>
+					<%= link_to directory_category.category_name, directory_category %>
+				</li>
+			<% end %>
+		</ul>
+		<!-- Un-Ordered List - Listing Categories -->
+		<br>
+		<%= link_to phcmembers.new_directory_category_path, class: "btn btn-primary" do %>
+			<i class="fas fa-plus-circle"></i>
+			<%= "Add a New Directory Category" %>
+		<% end %>
+		<!-- Un-Ordered List - Listing Categories -->
+  </div>
+  <!-- Panel Body -->
+</div>
+<!-- Page & Panel Content -->
