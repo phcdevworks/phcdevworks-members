@@ -1,5 +1,5 @@
-### PHCMembers(2019) (Membership & Directory Engine) Documentation
-PHCMembers(2019) rails engine to manage membership information and directory listings.  
+### PHCDevworks-Members (Membership & Directory Engine) Documentation
+PHCDevworks-Members rails engine to manage membership information and directory listings.  
 
 * Fast setup of membership and web directory modules.
 * Directory and listings manager with a web directory API.
@@ -31,6 +31,4 @@ To properly function re-compile your application's assets to copy over required 
 #### Step 5 - Generate Views  (Customization)
 Generate views for customization and app integration.  
 
-	rails generate phcmembers:views
-
-#### Additional Information
+	rails generate phcdevworks_members:views

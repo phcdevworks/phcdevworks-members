@@ -1,31 +1,31 @@
 Phcmembers::Engine.routes.draw do
-  
+
   # Dashboard Routes
-  get 'dashboard', to: 'member/dashboards#index'
+  get 'dashboard', to: 'info/dashboards#index'
   
   # Member Routes
   namespace :member do
-    resources :profiles, class_name: 'Phcmembers::Member::Profile' do
-      resources :listings, class_name: 'Phcmembers::Member::Listing'
-      resources :addresses, class_name: 'Phcmembers::Member::Address'
+    resources :profiles, class_name: 'PhcdevworksMembers::Member::Profile' do
+      resources :listings, class_name: 'PhcdevworksMembers::Member::Listing'
+      resources :addresses, class_name: 'PhcdevworksMembers::Member::Address'
     end
   end
   
   # Directory Routes
   namespace :directory do
-    resources :categories, class_name: 'Phcmembers::Directory::Category'
+    resources :categories, class_name: 'PhcdevworksMembers::Directory::Category'
   end
   
   # API Routes
   namespace :api, :path => "", :constraints => {:subdomain => "api"} do
     namespace :v1 do
       resources :categories, defaults: {format: 'json'} do
-        resources :listings, defaults: {format: 'json'}
-      end
+      resources :listings, defaults: {format: 'json'}
+    end
     end
   end
   
-  # PHCAccounts Routes
-  mount Phcaccounts::Engine, :at => '/'
+  # Mount Routes
+  mount PhcdevworksAccounts::Engine, :at => '/'
   
 end
