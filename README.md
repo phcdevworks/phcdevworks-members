@@ -20,7 +20,7 @@ To copy required database migrations, copy each command individually to your ter
 #### Step 3 - Mount PHCMembers & Add Routes
 Mount PHCMembers by adding the code below to your routes file.  
 
-	mount Phcdevworks_members::Engine, :at => '/'
+	mount PhcdevworksMembers::Engine, :at => '/'
 
 #### Step 4 - Recompile Assets  
 To properly function re-compile your application's assets to copy over required files.
