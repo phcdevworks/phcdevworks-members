@@ -1,4 +1,4 @@
-Phcmembers::Engine.routes.draw do
+PhcdevworksMembers::Engine.routes.draw do
 
   # Dashboard Routes
   get 'dashboard', to: 'info/dashboards#index'

@@ -1,8 +1,8 @@
-class CreatePhcmembersProfileVersions < ActiveRecord::Migration[6.0]
+class CreatePhcdevworksMembersAddressVersions < ActiveRecord::Migration[6.0]
   TEXT_BYTES = 1_073_741_823
   def change
 
-    create_table :phcmembers_profile_versions do |t|
+    create_table :phcdevworks_members_address_versions do |t|
 
       t.string   :item_type, {:null=>false}
       t.integer  :item_id,   null: false
@@ -13,7 +13,7 @@ class CreatePhcmembersProfileVersions < ActiveRecord::Migration[6.0]
 
     end
 
-    add_index :phcmembers_profile_versions, %i(item_type item_id), :name => 'mem_profile_versions'
+    add_index :phcdevworks_members_address_versions, %i(item_type item_id), :name => 'mem_address_versions'
 
   end
 end
