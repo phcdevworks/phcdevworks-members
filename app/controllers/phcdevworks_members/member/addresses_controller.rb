@@ -5,45 +5,41 @@ module PhcdevworksMembers
 
     # Filters & Security
     #include Phccorehelpers::PhcpluginsHelper
-    #before_action :phcmembers_get_member_profile_info
     #before_action :authenticate_user!
-    #before_action :set_paper_trail_whodunnit
+    before_action :set_paper_trail_whodunnit
     before_action :set_member_address, only: [:show, :edit, :update, :destroy]
 
     # GET /member/addresses
     # GET /member/addresses.json
     def index
-      profile = Member::Profile.find(params[:profile_id])
-      @member_addresses = profile.addresses.all
+      @member_addresses = member_profile.addresses.all
     end
 
     # GET /member/addresses/1
     # GET /member/addresses/1.json
     def show
-      profile = Member::Profile.find(params[:profile_id])
-      @member_address = profile.addresses.find(params[:id])
+      @member_address = member_profile.addresses.find(params[:id])
       @member_address_versions = PhcdevworksMembers::AddressVersions.where(item_id: @member_address, item_type: 'PhcdevworksMembers::Member::Address')
     end
 
     # GET /member/addresses/new
     def new
-      profile = Member::Profile.find(params[:profile_id])
-      @member_address = profile.addresses.build
+      @member_address = member_profile.addresses.build
     end
 
     # GET /member/addresses/1/edit
     def edit
+      @member_profile = Member::Profile.friendly.find(params[:profile_id])
     end
 
     # POST /member/addresses
     # POST /member/addresses.json
     def create
-      @profile = Member::Profile.find(params[:profile_id])
-      @member_address = @profile.addresses.create(member_address_params)
-      @member_address.user_id = current_user.id
+      @member_address = member_profile.addresses.create(member_address_params)
+      #@member_address.user_id = current_user.id
       respond_to do |format|
         if @member_address.save
-          format.html { redirect_to @member_address, notice: 'Address was successfully created.' }
+          format.html { redirect_to member_profile_addresses_url, :flash => { :success => 'Member Address has been Added' }}
           format.json { render :show, status: :created, location: @member_address }
         else
           format.html { render :new }
@@ -55,10 +51,10 @@ module PhcdevworksMembers
     # PATCH/PUT /member/addresses/1
     # PATCH/PUT /member/addresses/1.json
     def update
-      @profile = Member::Profile.find(params[:profile_id])
+      @member_profile = Member::Profile.friendly.find(params[:profile_id])
       respond_to do |format|
         if @member_address.update(member_address_params)
-          format.html { redirect_to @member_address, notice: 'Address was successfully updated.' }
+          format.html { redirect_to member_profile_addresses_url, :flash => { :notice => 'Member Address has been Updated.' }}
           format.json { render :show, status: :ok, location: @member_address }
         else
           format.html { render :edit }
@@ -70,11 +66,10 @@ module PhcdevworksMembers
     # DELETE /member/addresses/1
     # DELETE /member/addresses/1.json
     def destroy
-      @profile = Member::Profile.find(params[:profile_id])
-      @member_address = @profile.addresses.find(params[:id])
+      @member_address = member_profile.addresses.find(params[:id])
       @member_address.destroy
       respond_to do |format|
-        format.html { redirect_to member_addresses_url, notice: 'Address was successfully destroyed.' }
+        format.html { redirect_to member_profile_addresses_url, :flash => { :error => 'Member Address has been Removed' }}
         format.json { head :no_content }
       end
     end
@@ -83,7 +78,11 @@ module PhcdevworksMembers
 
     # Common Callbacks
     def set_member_address
-      @member_address = Member::Address.find(params[:id])
+      @member_address = Member::Address.friendly.find(params[:id])
+    end
+
+    def member_profile
+      @member_profile = Member::Profile.friendly.find(params[:profile_id])
     end
 
     # Whitelist

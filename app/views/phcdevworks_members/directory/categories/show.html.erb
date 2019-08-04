@@ -1,8 +1,8 @@
 <!-- Title System -->
 <% phc_title "Directory Category Manager" %>
 <% phc_title_tagline "Detailed Information for " + @directory_category.category_name %>
-<% phc_breadcrumb_one link_to "Dashboard", phcmembers.dashboard_path %>
-<% phc_breadcrumb_two link_to "Directory Category Index", phcmembers.directory_categories_path %>
+<% phc_breadcrumb_one link_to "Dashboard", phcdevworks_members.dashboard_path %>
+<% phc_breadcrumb_two link_to "Directory Category Index", phcdevworks_members.directory_categories_path %>
 <% phc_breadcrumb_three yield(:phc_title_tagline) %>
 <!-- Title System -->
 
@@ -21,10 +21,10 @@
 <!-- Page Content -->
 <div class="row">
 	<div class="col-lg-3">
-		<%= render 'phcmembers/directory/categories/components/category_sidebar' %>
+		<%= render 'phcdevworks_members/directory/categories/components/category_sidebar' %>
 	</div>
 	<div class="col-lg-9">
-		<%= render 'phcmembers/directory/categories/components/category_main' %>
+		<%= render 'phcdevworks_members/directory/categories/components/category_main' %>
 	</div>
 </div>
 <!-- Page Content -->

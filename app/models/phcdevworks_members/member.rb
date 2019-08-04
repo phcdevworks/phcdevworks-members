@@ -1,7 +1,7 @@
-module Phcmembers
+module PhcdevworksMembers
   module Member
     def self.table_name_prefix
-      'phcmembers_member_'
+      'phcdevworks_members_member_'
     end
   end
 end

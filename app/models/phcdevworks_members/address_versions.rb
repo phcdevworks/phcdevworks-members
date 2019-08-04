@@ -1,5 +1,5 @@
-module Phcmembers
+module PhcdevworksMembers
   class AddressVersions < PaperTrail::Version
-    self.table_name = :phcmembers_address_versions
+    self.table_name = :phcdevworks_members_address_versions
   end
 end

@@ -1,7 +1,7 @@
 <!-- Title System -->
 <% phc_title "Members Manager" %>
 <% phc_title_tagline "Members List" %>
-<% phc_breadcrumb_one link_to "Dashboard", phcmembers.dashboard_path %>
+<% phc_breadcrumb_one link_to "Dashboard", phcdevworks_members.dashboard_path %>
 <% phc_breadcrumb_two yield(:phc_title_tagline) %>
 <!-- Title System -->
 
@@ -45,10 +45,10 @@
 				<tbody>
 					<% @member_profiles.each do |member_profile| %>
 						<tr>
-							<td><%= link_to member_profile.member_first_name, member_profile %></td>
-							<td><%= link_to member_profile.member_last_name, member_profile %></td>
-							<td><%= link_to member_profile.member_email, member_profile %></td>
-							<td><%= link_to member_profile.member_phone, member_profile %></td>
+							<td><%= link_to member_profile.member_profile_first_name, member_profile %></td>
+							<td><%= link_to member_profile.member_profile_last_name, member_profile %></td>
+							<td><%= link_to member_profile.member_profile_email, member_profile %></td>
+							<td><%= link_to member_profile.member_profile_phone, member_profile %></td>
 							<td>
 								<div class="btn-group d-flex" role="group">
 									<%= link_to 'Details', member_profile, class: "btn btn-primary btn-xs" %>
@@ -60,7 +60,7 @@
 					<% end %>
 				</tbody>
 			</table>
-			<%= link_to phcmembers.new_member_profile_path, class: "btn btn-primary btn-sm" do %>
+			<%= link_to phcdevworks_members.new_member_profile_path, class: "btn btn-primary btn-sm" do %>
 				<i class="fas fa-plus-circle"></i>
 				Add a New Member
 			<% end %>

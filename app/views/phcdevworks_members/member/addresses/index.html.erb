@@ -1,8 +1,8 @@
 <!-- Title Variables -->
 <% phc_title "Member Address Manager" %>
-<% phc_title_tagline "Addresses for " + @members_profile_info.member_first_name + " " + @members_profile_info.member_last_name %>
-<% phc_breadcrumb_one link_to "Dashboard", phcmembers.dashboard_path %>
-<% phc_breadcrumb_two link_to "Members List", phcmembers.member_profiles_path %>
+<% phc_title_tagline "Addresses for " + @member_profile.member_profile_first_name + " " + @member_profile.member_profile_last_name %>
+<% phc_breadcrumb_one link_to "Dashboard", phcdevworks_members.dashboard_path %>
+<% phc_breadcrumb_two link_to "Members List", phcdevworks_members.member_profiles_path %>
 <% phc_breadcrumb_three yield(:phc_title_tagline) %>
 <!-- Title System -->
 
@@ -47,11 +47,11 @@
 				<tbody>
 					<% @member_addresses.each do |member_address| %>
 						<tr>
-							<td><%= link_to member_address.address_address_line_1, phcmembers.member_profile_address_path(member_address.profile, member_address) %></td>
-							<td><%= link_to member_address.address_city, phcmembers.member_profile_address_path(member_address.profile, member_address) %></td>
-							<td><%= link_to member_address.address_country, phcmembers.member_profile_address_path(member_address.profile, member_address) %></td>
-							<td><%= link_to member_address.address_postal_code, phcmembers.member_profile_address_path(member_address.profile, member_address) %></td>
-							<td><%= link_to member_address.address_type, phcmembers.member_profile_address_path(member_address.profile, member_address) %></td>
+							<td><%= link_to member_address.member_address_line_1, phcdevworks_members.member_profile_address_path(member_address.profile, member_address) %></td>
+							<td><%= link_to member_address.member_address_city, phcdevworks_members.member_profile_address_path(member_address.profile, member_address) %></td>
+							<td><%= link_to member_address.member_address_country, phcdevworks_members.member_profile_address_path(member_address.profile, member_address) %></td>
+							<td><%= link_to member_address.member_address_postal_code, phcdevworks_members.member_profile_address_path(member_address.profile, member_address) %></td>
+							<td><%= link_to member_address.member_address_type, phcdevworks_members.member_profile_address_path(member_address.profile, member_address) %></td>
 							<td>
 								<div class="btn-group d-flex" role="group">
 									<%= link_to 'Details', member_profile_address_path(member_address.profile, member_address), class: "btn btn-primary btn-xs" %>
@@ -63,9 +63,9 @@
 					<% end %>
 				</tbody>
 			</table>
-			<%= link_to phcmembers.new_member_profile_address_path, class: "btn btn-primary btn-sm" do %>
+			<%= link_to phcdevworks_members.new_member_profile_address_path, class: "btn btn-primary btn-sm" do %>
 				<i class="fas fa-plus-circle"></i>
-				<%= "Add a New Address for " + @members_profile_info.member_first_name + " " + @members_profile_info.member_last_name %>
+				<%= "Add a New Address for " + @member_profile.member_profile_first_name + " " + @member_profile.member_profile_last_name %>
 			<% end %>
 		</div>
 		<!-- Table - Member - Addresses - Index -->

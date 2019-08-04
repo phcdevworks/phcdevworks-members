@@ -10,11 +10,13 @@ module PhcdevworksMembers
     before_action :set_directory_category, only: [:show, :edit, :update, :destroy]
 
     # GET /directory/categories
+    # GET /directory/categories.json
     def index
       @directory_categories = Directory::Category.all
     end
 
     # GET /directory/categories/1
+    # GET /directory/categories/1.json
     def show
     end
 
@@ -28,35 +30,49 @@ module PhcdevworksMembers
     end
 
     # POST /directory/categories
+    # POST /directory/categories.json
     def create
       @directory_category = Directory::Category.new(directory_category_params)
-      if @directory_category.save
-        redirect_to @directory_category, notice: 'Category was successfully created.'
-      else
-        render :new
+      respond_to do |format|
+        if @directory_category.save
+          format.html { redirect_to @directory_category, notice: 'Category was successfully created.' }
+          format.json { render :show, status: :created, location: @directory_category }
+        else
+          format.html { render :new }
+          format.json { render json: @directory_category.errors, status: :unprocessable_entity }
+        end
       end
     end
 
     # PATCH/PUT /directory/categories/1
+    # PATCH/PUT /directory/categories/1.json
     def update
-      if @directory_category.update(directory_category_params)
-        redirect_to @directory_category, notice: 'Category was successfully updated.'
-      else
-        render :edit
+      respond_to do |format|
+        if @directory_category.update(directory_category_params)
+          format.html { redirect_to @directory_category, notice: 'Category was successfully updated.' }
+          format.json { render :show, status: :ok, location: @directory_category }
+        else
+          format.html { render :edit }
+          format.json { render json: @directory_category.errors, status: :unprocessable_entity }
+        end
       end
     end
 
     # DELETE /directory/categories/1
+    # DELETE /directory/categories/1.json
     def destroy
       @directory_category.destroy
-      redirect_to directory_categories_url, notice: 'Category was successfully destroyed.'
+      respond_to do |format|
+        format.html { redirect_to directory_categories_url, notice: 'Category was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
 
     private
 
     # Common Callbacks
     def set_directory_category
-      @directory_category = Directory::Category.find(params[:id])
+      @directory_category = Directory::Category.friendly.find(params[:id])
     end
 
     # Whitelist

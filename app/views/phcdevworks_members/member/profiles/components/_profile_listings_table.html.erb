@@ -19,6 +19,6 @@
 			<% end %>
 		</tbody>
 	</table>
-	<%= link_to "See All of " + @member_profile.member_first_name + " " + @member_profile.member_last_name + " Listings", phcmembers.member_profile_listings_path(@member_profile), class: "btn btn-primary btn-xs" %>
-	<%= link_to "Add a New Listing for " + @member_profile.member_first_name + " " + @member_profile.member_last_name, phcmembers.new_member_profile_listing_path(@member_profile), class: "btn btn-purple btn-xs" %>
+	<%= link_to "See All of " + @member_profile.member_profile_first_name + " " + @member_profile.member_profile_last_name + " Listings", phcdevworks_members.member_profile_listings_path(@member_profile), class: "btn btn-primary btn-xs" %>
+	<%= link_to "Add a New Listing for " + @member_profile.member_profile_first_name + " " + @member_profile.member_profile_last_name, phcdevworks_members.new_member_profile_listing_path(@member_profile), class: "btn btn-purple btn-xs" %>
 </div>

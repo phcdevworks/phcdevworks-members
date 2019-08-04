@@ -12,8 +12,8 @@ module PhcdevworksMembers
     gravtastic :member_profile_email
 
     # Relationships
-    has_many :addresses, class_name: 'PhcdevworksMembers::Member::Address', :dependent => :destroy
-    has_many :listings, class_name: 'PhcdevworksMembers::Member::Listing', :dependent => :destroy
+    has_many :addresses, class_name: 'Member::Address', :dependent => :destroy
+    has_many :listings, class_name: 'Member::Listing', :dependent => :destroy
 
     # Form Fields Validation
     validates :member_profile_first_name,

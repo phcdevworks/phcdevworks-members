@@ -5,15 +5,15 @@ PhcdevworksMembers::Engine.routes.draw do
   
   # Member Routes
   namespace :member do
-    resources :profiles, class_name: 'PhcdevworksMembers::Member::Profile' do
-      resources :listings, class_name: 'PhcdevworksMembers::Member::Listing'
-      resources :addresses, class_name: 'PhcdevworksMembers::Member::Address'
+    resources :profiles, class_name: 'Member::Profile' do
+      resources :listings, class_name: 'Member::Listing'
+      resources :addresses, class_name: 'Member::Address'
     end
   end
   
   # Directory Routes
   namespace :directory do
-    resources :categories, class_name: 'PhcdevworksMembers::Directory::Category'
+    resources :categories, class_name: 'Directory::Category'
   end
   
   # API Routes

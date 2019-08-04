@@ -26,6 +26,8 @@ Gem::Specification.new do |spec|
   # Main Dependencies
   spec.add_dependency "rails", "~> 6.0.0.rc2"
   spec.add_dependency "jbuilder", "~> 2.7"
+  spec.add_dependency "paper_trail", "~> 10.3"
+  spec.add_dependency "friendly_id", "~> 5.2"
 
   # Theme Dependencies
   spec.add_dependency "phcthemes_admin_panel_pack", "~> 0.27.0"

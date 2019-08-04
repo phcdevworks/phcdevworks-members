@@ -3,8 +3,8 @@
 <head>
 
   <!-- SEO System -->
-  <% phc_seo_title "PHCMembers by PHCDevworks" %>
-  <% phc_seo_description "Application to manage member information and business directory listings" %>
+  <% phc_seo_title "Members by PHCDevworks" %>
+  <% phc_seo_description "Application to Manage Member Information and Business Directory Listings " %>
   <!-- SEO System -->
 
   <!-- SEO and Site Description -->
@@ -21,7 +21,7 @@
   <!-- Rails Security Tags -->
 
   <!-- CSS Styles -->
-  <%= stylesheet_link_tag 'phcmembers/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'phcdevworks_members/application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <!-- CSS Styles -->
 
   <!-- Font -->
@@ -36,27 +36,27 @@
 
     <!-- Page Header -->
     <div id="header" class="header navbar-default">
-      <%= render 'layouts/phcmembers/components/backend/navigation/top_menu' %>
+      <%= render 'layouts/phcdevworks_members/components/backend/navigation/top_menu' %>
     </div>
     <!-- Page Header -->
 
     <!-- Page Sidebar -->
     <div id="sidebar" class="sidebar">
-      <%= render 'layouts/phcmembers/components/backend/sidebars/side_menu' %>
+      <%= render 'layouts/phcdevworks_members/components/backend/sidebars/side_menu' %>
     </div>
     <div class="sidebar-bg"></div>
     <!-- Page Sidebar -->
 
     <!-- Page Content -->
     <div id="content" class="content">
-      <%= render 'phcnotifi/default/notifications' %>
+      <%= render 'phcdevworks_notifications/bootstrap/notifications' %>
       <%= yield %>
     </div>
     <!-- Page Content -->
 
     <!-- Footer Content -->
     <div id="footer" class="footer mb-4">
-      <%= render 'layouts/phcmembers/components/backend/footer/footer' %>
+      <%= render 'layouts/phcdevworks_members/components/backend/footer/footer' %>
     </div>
     <!-- Footer Content -->
 
@@ -64,7 +64,7 @@
   <!-- Page Container -->
 
   <!-- JavaScript -->
-  <%= javascript_include_tag "phcmembers/application", 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag "phcdevworks_members/application", 'data-turbolinks-track': 'reload' %>
   <!-- JavaScript -->
 
   <!-- JavaScript Loader -->

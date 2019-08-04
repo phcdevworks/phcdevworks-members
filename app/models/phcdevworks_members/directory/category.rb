@@ -15,11 +15,7 @@ module PhcdevworksMembers
       presence: true
 
     # Clean URL Define
-    friendly_id :phc_nice_url_slug, use: [:slugged, :finders]
-
-    def phc_nice_url_slug
-      [:category_name]
-    end
+    friendly_id :category_name, use: :slugged
 
   end
 end

@@ -3,6 +3,8 @@ module PhcdevworksMembers
 
     # Load Main Dependencies
     require "jbuilder"
+    require "paper_trail"
+    require "friendly_id"
 
     # Load Theme Dependencies
     require "phcthemes_admin_panel_pack"

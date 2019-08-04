@@ -6,7 +6,7 @@ module PhcdevworksMembers
     # Filters & Security
     #include Phccorehelpers::PhcpluginsHelper
     #before_action :authenticate_user!
-    #before_action :set_paper_trail_whodunnit
+    before_action :set_paper_trail_whodunnit
     before_action :set_member_profile, only: [:show, :edit, :update, :destroy]
     layout "phcdevworks_members/member_profile", :only => [ :show ]
 
@@ -19,7 +19,6 @@ module PhcdevworksMembers
     # GET /member/profiles/1
     # GET /member/profiles/1.json
     def show
-      @member_profile = Member::Profile.find(params[:id])
       @member_profile_versions = PhcdevworksMembers::ProfileVersions.where(item_id: @member_profile, item_type: 'PhcdevworksMembers::Member::Profile')
     end
 
@@ -36,10 +35,10 @@ module PhcdevworksMembers
     # POST /member/profiles.json
     def create
       @member_profile = Member::Profile.new(member_profile_params)
-      @member_profile.user_id = current_user.id
+      #@member_profile.user_id = current_user.id
       respond_to do |format|
         if @member_profile.save
-          format.html { redirect_to @member_profile, notice: 'Profile was successfully created.' }
+          format.html { redirect_to @member_profile, :flash => { :success => 'Member Profile has been Added.' }}
           format.json { render :show, status: :created, location: @member_profile }
         else
           format.html { render :new }
@@ -53,7 +52,7 @@ module PhcdevworksMembers
     def update
       respond_to do |format|
         if @member_profile.update(member_profile_params)
-          format.html { redirect_to @member_profile, notice: 'Profile was successfully updated.' }
+          format.html { redirect_to @member_profile, :flash => { :notice => 'Member Profile has been Updated.' }}
           format.json { render :show, status: :ok, location: @member_profile }
         else
           format.html { render :edit }
@@ -67,7 +66,7 @@ module PhcdevworksMembers
     def destroy
       @member_profile.destroy
       respond_to do |format|
-        format.html { redirect_to member_profiles_url, notice: 'Profile was successfully destroyed.' }
+        format.html { redirect_to member_profiles_url, :flash => { :error => 'Member Profile, Listings and Addresses have all been Removed.' }}
         format.json { head :no_content }
       end
     end
@@ -76,7 +75,7 @@ module PhcdevworksMembers
 
     # Common Callbacks
     def set_member_profile
-      @member_profile = Member::Profile.find(params[:id])
+      @member_profile = Member::Profile.friendly.find(params[:id])
     end
 
     # Whitelist
