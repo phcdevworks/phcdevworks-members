@@ -4,8 +4,8 @@ module PhcdevworksMembers
   class Member::AddressesController < ApplicationController
 
     # Filters & Security
-    #include Phccorehelpers::PhcpluginsHelper
-    #before_action :authenticate_user!
+    include PhcdevworksCore::PhcpluginsHelper
+    before_action :authenticate_user!
     before_action :set_paper_trail_whodunnit
     before_action :set_member_address, only: [:show, :edit, :update, :destroy]
 
@@ -36,7 +36,7 @@ module PhcdevworksMembers
     # POST /member/addresses.json
     def create
       @member_address = member_profile.addresses.create(member_address_params)
-      #@member_address.user_id = current_user.id
+      @member_address.user_id = current_user.id
       respond_to do |format|
         if @member_address.save
           format.html { redirect_to member_profile_addresses_url, :flash => { :success => 'Member Address has been Added' }}

@@ -4,8 +4,8 @@ module PhcdevworksMembers
   class Member::ProfilesController < ApplicationController
 
     # Filters & Security
-    #include Phccorehelpers::PhcpluginsHelper
-    #before_action :authenticate_user!
+    include PhcdevworksCore::PhcpluginsHelper
+    before_action :authenticate_user!
     before_action :set_paper_trail_whodunnit
     before_action :set_member_profile, only: [:show, :edit, :update, :destroy]
     layout "phcdevworks_members/member_profile", :only => [ :show ]
@@ -35,7 +35,7 @@ module PhcdevworksMembers
     # POST /member/profiles.json
     def create
       @member_profile = Member::Profile.new(member_profile_params)
-      #@member_profile.user_id = current_user.id
+      @member_profile.user_id = current_user.id
       respond_to do |format|
         if @member_profile.save
           format.html { redirect_to @member_profile, :flash => { :success => 'Member Profile has been Added.' }}

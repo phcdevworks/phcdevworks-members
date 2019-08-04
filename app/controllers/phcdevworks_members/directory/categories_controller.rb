@@ -4,9 +4,9 @@ module PhcdevworksMembers
   class Directory::CategoriesController < ApplicationController
 
     # Filters & Security
-    #include Phccorehelpers::PhcpluginsHelper
-    #before_action :authenticate_user!
-    #before_action :set_paper_trail_whodunnit
+    include PhcdevworksCore::PhcpluginsHelper
+    before_action :authenticate_user!
+    before_action :set_paper_trail_whodunnit
     before_action :set_directory_category, only: [:show, :edit, :update, :destroy]
 
     # GET /directory/categories
@@ -18,6 +18,7 @@ module PhcdevworksMembers
     # GET /directory/categories/1
     # GET /directory/categories/1.json
     def show
+      @directory_category_versions = PhcdevworksMembers::CategoryVersions.where(item_id: @directory_category, item_type: 'PhcdevworksMembers::Directory::Category')
     end
 
     # GET /directory/categories/new
@@ -33,9 +34,10 @@ module PhcdevworksMembers
     # POST /directory/categories.json
     def create
       @directory_category = Directory::Category.new(directory_category_params)
+      @directory_category.user_id = current_user.id
       respond_to do |format|
         if @directory_category.save
-          format.html { redirect_to @directory_category, notice: 'Category was successfully created.' }
+          format.html { redirect_to directory_categories_path, :flash => { :success => 'Directory Category has been Created.' }}
           format.json { render :show, status: :created, location: @directory_category }
         else
           format.html { render :new }
@@ -49,7 +51,7 @@ module PhcdevworksMembers
     def update
       respond_to do |format|
         if @directory_category.update(directory_category_params)
-          format.html { redirect_to @directory_category, notice: 'Category was successfully updated.' }
+          format.html { redirect_to directory_categories_path, :flash => { :notice => 'Directory Category has been Updated.' }}
           format.json { render :show, status: :ok, location: @directory_category }
         else
           format.html { render :edit }
@@ -63,7 +65,7 @@ module PhcdevworksMembers
     def destroy
       @directory_category.destroy
       respond_to do |format|
-        format.html { redirect_to directory_categories_url, notice: 'Category was successfully destroyed.' }
+        format.html { redirect_to directory_categories_path, :flash => { :error => 'Directory Category and all Listing Connections Removed' }}
         format.json { head :no_content }
       end
     end

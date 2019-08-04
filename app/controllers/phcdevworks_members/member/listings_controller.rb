@@ -4,8 +4,8 @@ module PhcdevworksMembers
   class Member::ListingsController < ApplicationController
 
     # Filters & Security
-    #include Phccorehelpers::PhcpluginsHelper
-    #before_action :authenticate_user!
+    include PhcdevworksCore::PhcpluginsHelper
+    before_action :authenticate_user!
     before_action :set_paper_trail_whodunnit
     before_action :set_member_listing, only: [:show, :edit, :update, :destroy]
 
@@ -36,7 +36,7 @@ module PhcdevworksMembers
     # POST /member/listings.json
     def create
       @member_listing = member_profile.listings.create(member_listing_params)
-      #@member_listing.user_id = current_user.id
+      @member_listing.user_id = current_user.id
       respond_to do |format|
         if @member_listing.save
           format.html { redirect_to member_profile_listings_url, :flash => { :success => 'Member Listing has been Added' }}
