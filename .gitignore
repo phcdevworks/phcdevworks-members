@@ -4,5 +4,8 @@ pkg/
 test/test_app/db/*.sqlite3
 test/test_app/db/*.sqlite3-journal
 test/test_app/log/*.log
+test/test_app/node_modules/
+test/test_app/yarn-error.log
 test/test_app/storage/
 test/test_app/tmp/
+*.gem

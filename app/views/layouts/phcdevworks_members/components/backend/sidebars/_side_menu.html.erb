@@ -20,12 +20,12 @@
       <li>
         <ul class="nav nav-profile">
           <li>
-            <%= link_to phcaccounts.edit_user_registration_path do %>
+            <%= link_to phcdevworks_accounts.edit_user_registration_path do %>
               <i class="fas fa-cogs"></i> Account Settings
             <% end %>
           </li>
           <li>
-            <%= link_to phcaccounts.destroy_user_session_path do %>
+            <%= link_to phcdevworks_accounts.destroy_user_session_path do %>
               <i class="fas fa-sign-out-alt"></i> Logout
             <% end %>
           </li>
@@ -142,7 +142,7 @@
     <% end %>
 
     <% if current_user && current_user.admin? %>
-      <!-- Sidebar - Sidebar Navigation - PHCAccounts Admin Options -->
+      <!-- Sidebar - Sidebar Navigation - PHCDevworks Accounts Admin Options -->
       <li class="nav-header">User Administration</li>
       <li class="has-sub">
         <a href="javascript:;">
@@ -151,14 +151,14 @@
           <span>Admin</span>
         </a>
         <ul class="sub-menu">
-          <li class="<%= phc_menu_active_controller('phcaccounts/admin/users') %>"><%= link_to 'User List', phcaccounts.admin_users_path %></li>
+          <li class="<%= phc_menu_active_controller('phcdevworks_accounts/admin/users') %>"><%= link_to 'User List', phcdevworks_accounts.admin_users_path %></li>
         </ul>
       </li>
-      <!-- Sidebar - Sidebar Navigation - PHCAccounts Admin Options -->
+      <!-- Sidebar - Sidebar Navigation - PHCDevworks Accounts Admin Options -->
     <% end %>
 
     <% if current_user %>
-      <!-- Sidebar - Sidebar Navigation - PHCAccounts User Options -->
+      <!-- Sidebar - Sidebar Navigation - PHCDevworks Accounts User Options -->
       <li class="nav-header">Your Account</li>
       <li class="has-sub">
         <a href="javascript:;">
@@ -167,11 +167,11 @@
           <span>Accounts Settings</span>
         </a>
         <ul class="sub-menu">
-          <li class="<%= phc_menu_active_controller('phcaccounts/user/edit') %>"><%= link_to 'Settings', phcaccounts.edit_user_registration_path %></li>
-          <li class="<%= phc_menu_active_controller('phcaccounts/user/new') %>"><%= link_to 'Logout', phcaccounts.destroy_user_session_path, method: :delete %></li>
+          <li class="<%= phc_menu_active_controller('phcdevworks_accounts/user/edit') %>"><%= link_to 'Settings', phcdevworks_accounts.edit_user_registration_path %></li>
+          <li class="<%= phc_menu_active_controller('phcdevworks_accounts/user/new') %>"><%= link_to 'Logout', phcdevworks_accounts.destroy_user_session_path, method: :delete %></li>
         </ul>
       </li>
-      <!-- Sidebar - Sidebar Navigation - PHCAccounts User Options -->
+      <!-- Sidebar - Sidebar Navigation - PHCDevworks Accounts User Options -->
     <% end %>
 
     <!-- Sidebar - Sidebar Minifier -->

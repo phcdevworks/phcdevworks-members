@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    phcdevworks_members (0.1.0)
+    phcdevworks_members (0.3.0)
       friendly_id (~> 5.2)
       jbuilder (~> 2.7)
       paper_trail (~> 10.3)
