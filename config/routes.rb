@@ -1,7 +1,7 @@
 PhcdevworksMembers::Engine.routes.draw do
 
   # Dashboard Routes
-  get 'dashboard', to: 'info/dashboards#index'
+  get 'dashboard', to: 'info/dashboard#index'
   
   # Member Routes
   namespace :member do

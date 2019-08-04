@@ -11,7 +11,7 @@ module PhcdevworksMembers
     require "phcthemes_web_theme_pack"
 
     # Load Helper Dependencies
-    require "phcdevworks_core"
+    # require "phcdevworks_core"
     require "phcdevworks_active_menus"
     require "phcdevworks_notifications"
     require "phcdevworks_titleseo"
