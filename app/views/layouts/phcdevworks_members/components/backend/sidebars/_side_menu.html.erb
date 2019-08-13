@@ -21,7 +21,7 @@
         <ul class="nav nav-profile">
           <li>
             <%= link_to phcdevworks_accounts.edit_user_registration_path do %>
-              <i class="fas fa-cogs"></i> Account Settings
+              <i class="fad fa-cogs"></i> Account Settings
             <% end %>
           </li>
           <li>
@@ -66,13 +66,41 @@
       <!-- Sidebar - Sidebar Navigation - PHCDevworks Members -->
     <% end %>
 
+    <% if defined?phcdevworks_cms_press %>
+      <!-- Sidebar - Sidebar Navigation - phcdevworks_cms_press -->
+      <li class="nav-header">Article Management</li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fad fa-newspaper"></i>
+          <span>Article Posts</span>
+        </a>
+        <ul class="sub-menu">
+          <li class="<%= phc_menu_active_controller('phcdevworks_cms_press/article/posts') %>"><%= link_to('Article Index', phcdevworks_cms_press.article_posts_path) %></li>
+          <li class="<%= phc_menu_active_controller('phcdevworks_cms_press/article/posts#new') %>"><%= link_to('New Aritcle', phcdevworks_cms_press.new_article_post_path) %></li>
+        </ul>
+      </li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fad fa-sitemap"></i>
+          <span>Article Categories</span>
+        </a>
+        <ul class="sub-menu">
+          <li class="<%= phc_menu_active_controller('phcdevworks_cms_press/article/categories') %>"><%= link_to('Category Index', phcdevworks_cms_press.article_categories_path) %></li>
+          <li class="<%= phc_menu_active_controller('phcdevworks_cms_press/article/categories#new') %>"><%= link_to('New Category', phcdevworks_cms_press.new_article_category_path) %></li>
+        </ul>
+      </li>
+      <!-- Sidebar - Sidebar Navigation - phcdevworks_cms_press -->
+    <% end %>
+
     <% if current_user && current_user.admin? %>
       <!-- Sidebar - Sidebar Navigation - PHCAccounts Admin Options -->
       <li class="nav-header">User Administration</li>
       <li class="has-sub">
         <a href="javascript:;">
           <b class="caret"></b>
-          <i class="fas fa-user"></i>
+          <i class="fad fa-user"></i>
           <span>Admin</span>
         </a>
         <ul class="sub-menu">
@@ -88,7 +116,7 @@
       <li class="has-sub">
         <a href="javascript:;">
           <b class="caret"></b>
-          <i class="fas fa-user"></i>
+          <i class="fad fa-user"></i>
           <span>Accounts Settings</span>
         </a>
         <ul class="sub-menu">

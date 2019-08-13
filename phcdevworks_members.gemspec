@@ -30,17 +30,17 @@ Gem::Specification.new do |spec|
   spec.add_dependency "friendly_id", "~> 5.2"
 
   # Theme Dependencies
-  spec.add_dependency "phcthemes_admin_panel_pack", "~> 0.28.0"
+  spec.add_dependency "phcthemes_admin_panel_pack", "~> 0.31.0"
   spec.add_dependency "phcthemes_web_theme_pack", "~> 0.15.0"
 
   # Helper Dependencies
-  # spec.add_dependency "phcdevworks_core", "~> 0.1.0"
-  spec.add_dependency "phcdevworks_active_menus", "~> 0.31.0"
-  spec.add_dependency "phcdevworks_notifications", "~> 0.33.0"
-  spec.add_dependency "phcdevworks_titleseo", "~> 0.35.0"
+  # spec.add_dependency "phcdevworks_core", "~> 0.5.0"
+  spec.add_dependency "phcdevworks_active_menus", "~> 0.33.0"
+  spec.add_dependency "phcdevworks_notifications", "~> 0.35.0"
+  spec.add_dependency "phcdevworks_titleseo", "~> 0.37.0"
 
   # Security Dependencies
-  spec.add_dependency "phcdevworks_accounts", "~> 0.4.0"
+  spec.add_dependency "phcdevworks_accounts", "~> 0.8.0"
 
   # Development Dependencies
   spec.add_development_dependency "sqlite3", "~> 1.4", ">= 1.4.1"
