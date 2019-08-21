@@ -16,6 +16,11 @@ module PhcdevworksMembers
     require "phcdevworks_notifications"
     require "phcdevworks_titleseo"
 
+    # Load Upload Dependencies
+    require "aws-sdk-s3"
+    require "google-cloud-storage"
+    require "mini_magick"
+
     # Load User Accounts
     require "phcdevworks_accounts"
 

@@ -26,7 +26,7 @@
           </li>
           <li>
             <%= link_to phcdevworks_accounts.destroy_user_session_path do %>
-              <i class="fas fa-sign-out-alt"></i> Logout
+              <i class="fad fa-sign-out-alt"></i> Logout
             <% end %>
           </li>
         </ul>
@@ -66,8 +66,8 @@
       <!-- Sidebar - Sidebar Navigation - PHCDevworks Members -->
     <% end %>
 
-    <% if defined?phcdevworks_cms_press %>
-      <!-- Sidebar - Sidebar Navigation - phcdevworks_cms_press -->
+    <% if defined?phcdevworks_press %>
+      <!-- Sidebar - Sidebar Navigation - PHCPress CMS -->
       <li class="nav-header">Article Management</li>
       <li class="has-sub">
         <a href="javascript:;">
@@ -76,8 +76,8 @@
           <span>Article Posts</span>
         </a>
         <ul class="sub-menu">
-          <li class="<%= phc_menu_active_controller('phcdevworks_cms_press/article/posts') %>"><%= link_to('Article Index', phcdevworks_cms_press.article_posts_path) %></li>
-          <li class="<%= phc_menu_active_controller('phcdevworks_cms_press/article/posts#new') %>"><%= link_to('New Aritcle', phcdevworks_cms_press.new_article_post_path) %></li>
+          <li class="<%= phc_menu_active_controller('phcdevworks_press/article/posts') %>"><%= link_to('Article Index', phcdevworks_press.article_posts_path) %></li>
+          <li class="<%= phc_menu_active_controller('phcdevworks_press/article/posts#new') %>"><%= link_to('New Aritcle', phcdevworks_press.new_article_post_path) %></li>
         </ul>
       </li>
       <li class="has-sub">
@@ -87,11 +87,52 @@
           <span>Article Categories</span>
         </a>
         <ul class="sub-menu">
-          <li class="<%= phc_menu_active_controller('phcdevworks_cms_press/article/categories') %>"><%= link_to('Category Index', phcdevworks_cms_press.article_categories_path) %></li>
-          <li class="<%= phc_menu_active_controller('phcdevworks_cms_press/article/categories#new') %>"><%= link_to('New Category', phcdevworks_cms_press.new_article_category_path) %></li>
+          <li class="<%= phc_menu_active_controller('phcdevworks_press/article/categories') %>"><%= link_to('Category Index', phcdevworks_press.article_categories_path) %></li>
+          <li class="<%= phc_menu_active_controller('phcdevworks_press/article/categories#new') %>"><%= link_to('New Category', phcdevworks_press.new_article_category_path) %></li>
         </ul>
       </li>
-      <!-- Sidebar - Sidebar Navigation - phcdevworks_cms_press -->
+      <!-- Sidebar - Sidebar Navigation - PHCPress CMS -->
+    <% end %>
+
+    <% if defined?phcdevworks_scripts %>
+      <!-- Sidebar - Sidebar Navigation - PHCScripts CDN and Code Snippet Manager -->
+      <li class="nav-header">Script Management</li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fad fa-laptop-code"></i>
+          <span>Script Posts</span>
+        </a>
+        <ul class="sub-menu">
+          <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/listings') %>"><%= link_to "All Script Listings", phcdevworks_scripts.script_listings_path %></li>
+          <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/listings#new') %>"><%= link_to "Add a New Listing", phcdevworks_scripts.new_script_listing_path %></li>
+        </ul>
+      </li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fad fa-sitemap"></i>
+          <span>Script Extras</span>
+        </a>
+        <ul class="sub-menu">
+          <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/authors') %>"><%= link_to "Script Authors", phcdevworks_scripts.script_authors_path %></li>
+          <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/extensions') %>"><%= link_to "Script Extensions", phcdevworks_scripts.script_extensions_path %></li>
+          <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/versions') %>"><%= link_to "Script Versions", phcdevworks_scripts.script_versions_path %></li>
+        </ul>
+      </li>
+      <li class="nav-header">Code Snippets</li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fad fa-code"></i>
+          <span>Code Snippets</span>
+        </a>
+        <ul class="sub-menu">
+          <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/posts') %>"><%= link_to 'Snippet Index', phcdevworks_scripts.snippet_posts_path %></li>
+          <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/posts#new') %>"><%= link_to 'New Snippet', phcdevworks_scripts.new_snippet_post_path %></li>
+        </ul>
+      </li>
+      <!-- Sidebar - Sidebar Navigation - PHCScripts CDN and Code Snippet Manager -->
     <% end %>
 
     <% if current_user && current_user.admin? %>
