@@ -67,7 +67,7 @@
     <% end %>
 
     <% if defined?phcdevworks_press %>
-      <!-- Sidebar - Sidebar Navigation - PHCPress CMS -->
+      <!-- Sidebar - Sidebar Navigation - PHCDevworks Press -->
       <li class="nav-header">Article Management</li>
       <li class="has-sub">
         <a href="javascript:;">
@@ -91,11 +91,11 @@
           <li class="<%= phc_menu_active_controller('phcdevworks_press/article/categories#new') %>"><%= link_to('New Category', phcdevworks_press.new_article_category_path) %></li>
         </ul>
       </li>
-      <!-- Sidebar - Sidebar Navigation - PHCPress CMS -->
+      <!-- Sidebar - Sidebar Navigation - PHCDevworks Press -->
     <% end %>
 
     <% if defined?phcdevworks_scripts %>
-      <!-- Sidebar - Sidebar Navigation - PHCScripts CDN and Code Snippet Manager -->
+      <!-- Sidebar - Sidebar Navigation - PHCDevworks Scripts -->
       <li class="nav-header">Script Management</li>
       <li class="has-sub">
         <a href="javascript:;">
@@ -132,7 +132,37 @@
           <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/posts#new') %>"><%= link_to 'New Snippet', phcdevworks_scripts.new_snippet_post_path %></li>
         </ul>
       </li>
-      <!-- Sidebar - Sidebar Navigation - PHCScripts CDN and Code Snippet Manager -->
+      <!-- Sidebar - Sidebar Navigation - PHCDevworks Scripts -->
+    <% end %>
+
+    <% if defined?phcdevworks_real_estate %>
+
+      <!-- Sidebar - Sidebar Navigation - PHCDevworks RealEstate -->
+      <li class="nav-header">Listing Management</li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fad fa-home-lg"></i>
+          <span>Property Listings</span>
+        </a>
+        <ul class="sub-menu">
+          <li class="<%= phc_menu_active_controller('phcdevworks_real_estate/property/listings') %>"><%= link_to 'Listing Index', phcdevworks_real_estate.property_listings_path %></li>
+          <li class="<%= phc_menu_active_controller('phcdevworks_real_estate/property/listings#new') %>"><%= link_to 'New Listing', phcdevworks_real_estate.new_property_listing_path %></li>
+        </ul>
+      </li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fad fa-list-alt"></i>
+          <span>Listing Features</span>
+        </a>
+        <ul class="sub-menu">
+          <li class="<%= phc_menu_active_controller('phcdevworks_real_estate/property/listings') %>"><%= link_to 'Features Index', phcdevworks_real_estate.property_features_path %></li>
+          <li class="<%= phc_menu_active_controller('phcdevworks_real_estate/property/listings#new') %>"><%= link_to 'New Features', phcdevworks_real_estate.new_property_feature_path %></li>
+        </ul>
+      </li>
+      <!-- Sidebar - Sidebar Navigation - PHCDevworks RealEstate -->
+    
     <% end %>
 
     <% if current_user && current_user.admin? %>
