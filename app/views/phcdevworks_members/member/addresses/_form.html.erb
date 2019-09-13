@@ -2,37 +2,37 @@
 <%= form_with(model: [ @member_profile, @member_address], url: form_url, local: true) do |form| %>
 
 	<!-- PHCNotifi Render Validation -->
-	<%= render 'phcdevworks_notifications/bootstrap/validations', :object => @member_address %>
+	<%= render "phcdevworks_notifications/bootstrap/validations", :object => @member_address %>
 	<!-- PHCNotifi Render Validation -->
 
 	<!-- Form Input Fields -->
 	<div class="form-group field_with_errors">
 		<%= form.label :member_address_line_1, "Address Line1" %>
-		<%= form.text_field :member_address_line_1, class: "form-control", placeholder: "Address Line 1 - Street Address" %>
+		<%= form.text_field :member_address_line_1, placeholder: "Address Line 1 - Street Address", class: "form-control" %>
 	</div>
 	<div class="form-group field_with_errors">
 		<%= form.label :member_address_line_2, "Address Line2" %>
-		<%= form.text_field :member_address_line_2, class: "form-control", placeholder: "Address Line 2 - Box - Suite - Floor" %>
+		<%= form.text_field :member_address_line_2, placeholder: "Address Line 2 - Box - Suite - Floor", class: "form-control" %>
 	</div>
 	<div class="form-group field_with_errors">
 		<%= form.label :member_address_city, "City" %>
-		<%= form.text_field :member_address_city, class: "form-control", placeholder: "City" %>
+		<%= form.text_field :member_address_city, placeholder: "City", class: "form-control" %>
 	</div>
 	<div class="form-group field_with_errors">
 		<%= form.label :member_address_province, "Province/State" %>
-		<%= form.text_field :member_address_province, class: "form-control", placeholder: "Province/State" %>
+		<%= form.text_field :member_address_province, placeholder: "Province/State", class: "form-control" %>
 	</div>
 	<div class="form-group field_with_errors">
 		<%= form.label :member_address_country, "Country" %>
-		<%= form.text_field :member_address_country, class: "form-control", placeholder: "Country" %>
+		<%= form.text_field :member_address_country, placeholder: "Country", class: "form-control" %>
 	</div>
 	<div class="form-group field_with_errors">
 		<%= form.label :member_address_postal_code, "PostalCode" %>
-		<%= form.text_field :member_address_postal_code, class: "form-control", placeholder: "PostalCode" %>
+		<%= form.text_field :member_address_postal_code, placeholder: "PostalCode", class: "form-control" %>
 	</div>
 	<div class="form-group field_with_errors">
 		<%= form.label :member_address_type, "Address Type" %>
-		<%= form.select :member_address_type, [['Billing Address','Billing'],['Street Address','Street'],['Mailing Address','Mailing'],['Home Address','Home'],['Business Address','Business']], {}, class: "form-control" %>
+		<%= form.select :member_address_type, [["Billing Address","Billing"],["Street Address","Street"],["Mailing Address","Mailing"],["Home Address","Home"],["Business Address","Business"]], {} %>
 	</div>
 	<!-- Form Input Fields -->
 
