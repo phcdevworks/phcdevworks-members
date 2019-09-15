@@ -46,11 +46,11 @@ module PhcdevworksMembers
       format: { with: /\A(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}\z/, message: "Please Follow this Phone Member Format: ***-***-****" }
 
     # Clean URL Define
-    friendly_id :phc_nice_url_slug, use: [:slugged, :finders]
+    friendly_id :phcdev_members_listing_nice_urls, use: [:slugged, :finders]
 
-    def phc_nice_url_slug
+    def phcdev_members_listing_nice_urls
       [
-        [:listing_company_name, :listing_contact_name]
+        [:org_id, :listing_company_name, :listing_contact_name]
       ]
     end
 

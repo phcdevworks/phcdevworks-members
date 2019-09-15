@@ -27,11 +27,11 @@ module PhcdevworksMembers
       presence: true
 
     # Clean URL Define
-    friendly_id :phc_nice_url_slug, use: [:slugged, :finders]
+    friendly_id :phcdev_members_address_nice_urls, use: [:slugged, :finders]
 
-    def phc_nice_url_slug
+    def phcdev_members_address_nice_urls
       [
-        [:member_address_city, :member_address_province, :member_address_type]
+        [:org_id, :member_address_type, :member_address_city, :member_address_province]
       ]
     end
 
