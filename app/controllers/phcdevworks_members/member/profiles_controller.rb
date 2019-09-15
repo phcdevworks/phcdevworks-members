@@ -36,6 +36,7 @@ module PhcdevworksMembers
     def create
       @member_profile = Member::Profile.new(member_profile_params)
       @member_profile.user_id = current_user.id
+      @member_profile.org_id = current_user.org_id
       respond_to do |format|
         if @member_profile.save
           format.html { redirect_to @member_profile, :flash => { :success => 'Member Profile has been Added.' }}

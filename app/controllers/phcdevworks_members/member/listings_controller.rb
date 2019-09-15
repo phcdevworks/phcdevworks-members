@@ -37,6 +37,7 @@ module PhcdevworksMembers
     def create
       @member_listing = member_profile.listings.create(member_listing_params)
       @member_listing.user_id = current_user.id
+      @member_listing.org_id = current_user.org_id
       respond_to do |format|
         if @member_listing.save
           format.html { redirect_to member_profile_listings_url, :flash => { :success => 'Member Listing has been Added' }}

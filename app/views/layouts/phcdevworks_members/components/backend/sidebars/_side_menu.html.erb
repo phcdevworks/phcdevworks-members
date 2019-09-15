@@ -136,7 +136,6 @@
     <% end %>
 
     <% if defined?phcdevworks_real_estate %>
-
       <!-- Sidebar - Sidebar Navigation - PHCDevworks RealEstate -->
       <li class="nav-header">Listing Management</li>
       <li class="has-sub">
@@ -162,7 +161,34 @@
         </ul>
       </li>
       <!-- Sidebar - Sidebar Navigation - PHCDevworks RealEstate -->
-    
+    <% end %>
+
+    <% if defined?phcdevworks_tutorials %>
+      <!-- Sidebar - Sidebar Navigation - PHCDevworks RealEstate -->
+      <li class="nav-header">Tutorials</li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fad fa-chalkboard-teacher"></i>
+          <span>Tutorial Posts</span>
+        </a>
+        <ul class="sub-menu">
+          <li class="<%= phc_menu_active_controller('phcdevworks_tutorials/tutorials/posts') %>"><%= link_to 'Tutorial Index', phcdevworks_tutorials.tutorial_posts_path %></li>
+          <li class="<%= phc_menu_active_controller('phcdevworks_tutorials/tutorials/posts#new') %>"><%= link_to 'New Tutorial', phcdevworks_tutorials.new_tutorial_post_path %></li>
+        </ul>
+      </li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fad fa-sitemap"></i>
+          <span>Tutorial Categories</span>
+        </a>
+        <ul class="sub-menu">
+          <li class="<%= phc_menu_active_controller('phcdevworks_tutorials/tutorials/categories') %>"><%= link_to 'Category Index', phcdevworks_tutorials.tutorial_categories_path %></li>
+          <li class="<%= phc_menu_active_controller('phcdevworks_tutorials/tutorials/categories#new') %>"><%= link_to 'New Category', phcdevworks_tutorials.new_tutorial_category_path %></li>
+        </ul>
+      </li>
+      <!-- Sidebar - Sidebar Navigation - PHCDevworks RealEstate -->
     <% end %>
 
     <% if current_user && current_user.admin? %>

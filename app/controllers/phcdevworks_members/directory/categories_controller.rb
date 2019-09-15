@@ -35,6 +35,7 @@ module PhcdevworksMembers
     def create
       @directory_category = Directory::Category.new(directory_category_params)
       @directory_category.user_id = current_user.id
+      @directory_category.org_id = current_user.org_id
       respond_to do |format|
         if @directory_category.save
           format.html { redirect_to directory_categories_path, :flash => { :success => 'Directory Category has been Created.' }}

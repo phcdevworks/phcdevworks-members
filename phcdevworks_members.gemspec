@@ -48,7 +48,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "mini_magick", "~> 4.9"
 
   # Security Dependencies
-  spec.add_dependency "phcdevworks_accounts", "~> 1.0.1"
+  spec.add_dependency "phcdevworks_accounts", "~> 1.1.0"
 
   # Development Dependencies
   spec.add_development_dependency "sqlite3", "~> 1.4", ">= 1.4.1"
