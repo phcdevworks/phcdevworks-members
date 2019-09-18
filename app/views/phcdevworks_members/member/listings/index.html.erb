@@ -1,15 +1,16 @@
 <!-- Title Variables -->
 <% phc_title "Member Listings Manager" %>
 <% phc_title_tagline "Listings for " + @member_profile.member_profile_first_name + " " + @member_profile.member_profile_last_name %>
-<% phc_breadcrumb_one link_to "Dashboard", phcdevworks_members.dashboard_path %>
-<% phc_breadcrumb_two link_to "Members List", phcdevworks_members.member_profiles_path %>
+<% phc_breadcrumb_one link_to "Members List", phcdevworks_members.member_profiles_path %>
+<% phc_breadcrumb_two link_to @member_profile.member_profile_first_name + " " + @member_profile.member_profile_last_name + " Details", phcdevworks_members.member_profile_path(@member_profile) %>
 <% phc_breadcrumb_three yield(:phc_title_tagline) %>
 <!-- Title System -->
 
 <!-- Page Bradcrumbs -->
 <ol class="breadcrumb pull-right">
   <li class="breadcrumb-item"><%= yield(:phc_breadcrumb_one) %></li>
-  <li class="breadcrumb-item active"><%= yield(:phc_breadcrumb_two) %></li>
+  <li class="breadcrumb-item"><%= yield(:phc_breadcrumb_two) %></li>
+  <li class="breadcrumb-item active"><%= yield(:phc_breadcrumb_three) %></li>
 </ol>
 <!-- Page Bradcrumbs -->
 
