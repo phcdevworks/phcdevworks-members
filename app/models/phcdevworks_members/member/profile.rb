@@ -38,7 +38,7 @@ module PhcdevworksMembers
 
     def phcdev_members_profile_nice_urls
       [
-        [:org_id, :member_profile_first_name, :member_profile_last_name]
+        [:member_profile_first_name, :member_profile_last_name]
       ]
     end
 

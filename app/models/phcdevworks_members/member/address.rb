@@ -31,7 +31,7 @@ module PhcdevworksMembers
 
     def phcdev_members_address_nice_urls
       [
-        [:org_id, :member_address_type, :member_address_city, :member_address_province]
+        [:member_address_type, :member_address_city, :member_address_province]
       ]
     end
 

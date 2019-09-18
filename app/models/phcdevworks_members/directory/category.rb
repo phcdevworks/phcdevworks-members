@@ -19,7 +19,7 @@ module PhcdevworksMembers
 
     def phcdev_directory_category_nice_urls
       [
-        [:org_id, :category_name]
+        [:category_name]
       ]
     end
 

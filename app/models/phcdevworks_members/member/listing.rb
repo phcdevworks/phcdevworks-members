@@ -50,7 +50,7 @@ module PhcdevworksMembers
 
     def phcdev_members_listing_nice_urls
       [
-        [:org_id, :listing_company_name, :listing_contact_name]
+        [:listing_company_name, :listing_contact_name]
       ]
     end
 
