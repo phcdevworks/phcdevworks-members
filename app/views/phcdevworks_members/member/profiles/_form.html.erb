@@ -10,22 +10,27 @@
 		<%= form.label :member_profile_first_name, "First Name*" %>
 		<%= form.text_field :member_profile_first_name, placeholder: "First Name", class: "form-control" %>
 	</div>
+
 	<div class="form-group field_with_errors">
 		<%= form.label :member_profile_last_name, "Last Name*" %>
 		<%= form.text_field :member_profile_last_name, placeholder: "Last Name", class: "form-control" %>
 	</div>
+
 	<div class="form-group field_with_errors">
 		<%= form.label :member_profile_title, "Job Title" %>
 		<%= form.text_field :member_profile_title, placeholder: "Job Title/Salutation", class: "form-control" %>
 	</div>
+
 	<div class="form-group field_with_errors">
 		<%= form.label :member_profile_email, "Contact Email Address*" %>
 		<%= form.text_field :member_profile_email, placeholder: "Contact Email (Will Remain Private)", class: "form-control masked" %>
 	</div>
+
 	<div class="form-group field_with_errors">
 		<%= form.label :member_profile_phone, "Contact Phone Number*" %>
 		<%= form.text_field :member_profile_phone, placeholder: "Contact Phone Number (Will Remain Private)", data: {format: "(999) 999-9999", placeholder: "x"}, class: "form-control masked" %>
 	</div>
+
 	<div class="form-group field_with_errors">
 		<%= form.label :member_profile_notes, "Member" %>
 		<%= form.text_area :member_profile_notes, placeholder: "Member Notes", class: "form-control" %>
@@ -34,7 +39,7 @@
 
 	<!-- Form Submition Button -->
 	<div class="actions">
-		<%= form.submit class: "btn btn-primary btn-md" %>
+		<%= form.submit class: "btn btn-primary" %>
 	</div>
 	<!-- For Submition Button -->
 

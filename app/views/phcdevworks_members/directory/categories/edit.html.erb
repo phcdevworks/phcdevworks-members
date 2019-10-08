@@ -1,10 +1,10 @@
-<!-- Title System -->
+<!-- PHCTitleSEO Title Variables -->
 <% phc_title "Directory Category Manager" %>
 <% phc_title_tagline "Edit " + @directory_category.category_name + " Category Name" %>
 <% phc_breadcrumb_one link_to "Dashboard", phcdevworks_members.dashboard_path %>
 <% phc_breadcrumb_two link_to "Directory Category Index", phcdevworks_members.directory_categories_path %>
 <% phc_breadcrumb_three yield(:phc_title_tagline) %>
-<!-- Title System -->
+<!-- PHCTitleSEO Title Variables -->
 
 <!-- Page Bradcrumbs -->
 <ol class="breadcrumb pull-right">
@@ -15,23 +15,35 @@
 <!-- Page Bradcrumbs -->
 
 <!-- Page Header -->
-<h1 class="page-header"><%= yield(:phc_title) %></h1>
+<h2 class="page-header"><%= yield(:phc_title) %></h2>
 <!-- Page Header -->
 
 <!-- Page Content -->
-<div class="panel panel-inverse">
-	<div class="panel-heading">
-		<div class="panel-heading-btn">
-			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
-			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
-			<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+<div class="row">
+	<div class="col-lg-12">
+
+		<!-- Panel -->
+		<div class="panel panel-inverse">
+
+			<!-- Panel - Heading -->
+			<div class="panel-heading">
+				<h4 class="panel-title"><%= yield(:phc_title) %></h4>
+			</div>
+			<!-- Panel - Heading -->
+
+			<!-- Panel - Body -->
+			<div class="panel-body">
+
+				<!-- Edit Form -->
+				<%= render "form", directory_category: @directory_category %>
+				<!-- Edit Form -->
+
+			</div>
+			<!-- Panel - Body -->
+
 		</div>
-		<h4 class="panel-title"><%= yield(:phc_title) %></h4>
-	</div>
-	<div class="panel-body">
-		<!-- Form to Edit Directory Category -->
-		<%= render 'form', directory_category: @directory_category %>
-		<!-- Form to Edit Directory Category -->
+		<!-- Panel -->
+
 	</div>
 </div>
 <!-- Page Content -->
