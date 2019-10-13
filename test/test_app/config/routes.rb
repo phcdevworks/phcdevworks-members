@@ -4,6 +4,6 @@ Rails.application.routes.draw do
     root :to => "website/page#index"
 
     # Mount Engine for Testing
-    mount PhcdevworksMembers::Engine => "/phcdevworks_members"
+    mount PhcdevworksMembers::Engine => "/"
 
 end
