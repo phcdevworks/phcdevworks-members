@@ -20,7 +20,7 @@ module PhcdevworksMembers
 
     test "should create member_listing" do
       assert_difference('Member::Listing.count') do
-        post member_listings_url, params: { member_listing: { listing_address_line_1: @member_listing.listing_address_line_1, listing_address_line_2: @member_listing.listing_address_line_2, listing_city: @member_listing.listing_city, listing_company_name: @member_listing.listing_company_name, listing_contact_email: @member_listing.listing_contact_email, listing_contact_name: @member_listing.listing_contact_name, listing_country: @member_listing.listing_country, listing_phone: @member_listing.listing_phone, listing_postal_code: @member_listing.listing_postal_code, listing_province: @member_listing.listing_province, listing_website: @member_listing.listing_website } }
+        post member_listings_url, params: { member_listing: {  } }
       end
 
       assert_redirected_to member_listing_url(Member::Listing.last)
@@ -37,7 +37,7 @@ module PhcdevworksMembers
     end
 
     test "should update member_listing" do
-      patch member_listing_url(@member_listing), params: { member_listing: { listing_address_line_1: @member_listing.listing_address_line_1, listing_address_line_2: @member_listing.listing_address_line_2, listing_city: @member_listing.listing_city, listing_company_name: @member_listing.listing_company_name, listing_contact_email: @member_listing.listing_contact_email, listing_contact_name: @member_listing.listing_contact_name, listing_country: @member_listing.listing_country, listing_phone: @member_listing.listing_phone, listing_postal_code: @member_listing.listing_postal_code, listing_province: @member_listing.listing_province, listing_website: @member_listing.listing_website } }
+      patch member_listing_url(@member_listing), params: { member_listing: {  } }
       assert_redirected_to member_listing_url(@member_listing)
     end
 

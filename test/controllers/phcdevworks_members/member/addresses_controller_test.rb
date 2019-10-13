@@ -20,7 +20,7 @@ module PhcdevworksMembers
 
     test "should create member_address" do
       assert_difference('Member::Address.count') do
-        post member_addresses_url, params: { member_address: { member_address_city: @member_address.member_address_city, member_address_country: @member_address.member_address_country, member_address_line_1: @member_address.member_address_line_1, member_address_line_2: @member_address.member_address_line_2, member_address_postal_code: @member_address.member_address_postal_code, member_address_province: @member_address.member_address_province, member_address_type: @member_address.member_address_type } }
+        post member_addresses_url, params: { member_address: {  } }
       end
 
       assert_redirected_to member_address_url(Member::Address.last)
@@ -37,7 +37,7 @@ module PhcdevworksMembers
     end
 
     test "should update member_address" do
-      patch member_address_url(@member_address), params: { member_address: { member_address_city: @member_address.member_address_city, member_address_country: @member_address.member_address_country, member_address_line_1: @member_address.member_address_line_1, member_address_line_2: @member_address.member_address_line_2, member_address_postal_code: @member_address.member_address_postal_code, member_address_province: @member_address.member_address_province, member_address_type: @member_address.member_address_type } }
+      patch member_address_url(@member_address), params: { member_address: {  } }
       assert_redirected_to member_address_url(@member_address)
     end
 

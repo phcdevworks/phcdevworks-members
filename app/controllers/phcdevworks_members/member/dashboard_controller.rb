@@ -1,13 +1,13 @@
 require_dependency "phcdevworks_members/application_controller"
 
 module PhcdevworksMembers
-  class Info::DashboardController < ApplicationController
+  class Member::DashboardController < ApplicationController
 
     # Filters & Security
     #include PhcdevworksCore::PhcpluginsHelper
     before_action :authenticate_user!
 
-    # INDEX
+    # Index
     def index
       @member_profile_dashboard = PhcdevworksMembers::Member::Profile.all
       @member_listing_dashboard = PhcdevworksMembers::Member::Listing.all

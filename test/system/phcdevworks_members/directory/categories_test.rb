@@ -15,7 +15,6 @@ module PhcdevworksMembers
       visit directory_categories_url
       click_on "New Directory/Category"
 
-      fill_in "Category name", with: @directory_category.category_name
       click_on "Create Category"
 
       assert_text "Category was successfully created"
@@ -26,7 +25,6 @@ module PhcdevworksMembers
       visit directory_categories_url
       click_on "Edit", match: :first
 
-      fill_in "Category name", with: @directory_category.category_name
       click_on "Update Category"
 
       assert_text "Category was successfully updated"

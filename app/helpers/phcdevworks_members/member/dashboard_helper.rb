@@ -1,4 +1,4 @@
 module PhcdevworksMembers
-  module Info::DashboardHelper
+  module Member::DashboardHelper
   end
 end

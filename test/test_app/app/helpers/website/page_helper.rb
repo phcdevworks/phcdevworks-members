@@ -1,0 +1,2 @@
+module Website::PageHelper
+end

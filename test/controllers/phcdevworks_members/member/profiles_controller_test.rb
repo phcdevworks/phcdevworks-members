@@ -20,7 +20,7 @@ module PhcdevworksMembers
 
     test "should create member_profile" do
       assert_difference('Member::Profile.count') do
-        post member_profiles_url, params: { member_profile: { member_profile_email: @member_profile.member_profile_email, member_profile_first_name: @member_profile.member_profile_first_name, member_profile_last_name: @member_profile.member_profile_last_name, member_profile_notes: @member_profile.member_profile_notes, member_profile_phone: @member_profile.member_profile_phone, member_profile_title: @member_profile.member_profile_title } }
+        post member_profiles_url, params: { member_profile: {  } }
       end
 
       assert_redirected_to member_profile_url(Member::Profile.last)
@@ -37,7 +37,7 @@ module PhcdevworksMembers
     end
 
     test "should update member_profile" do
-      patch member_profile_url(@member_profile), params: { member_profile: { member_profile_email: @member_profile.member_profile_email, member_profile_first_name: @member_profile.member_profile_first_name, member_profile_last_name: @member_profile.member_profile_last_name, member_profile_notes: @member_profile.member_profile_notes, member_profile_phone: @member_profile.member_profile_phone, member_profile_title: @member_profile.member_profile_title } }
+      patch member_profile_url(@member_profile), params: { member_profile: {  } }
       assert_redirected_to member_profile_url(@member_profile)
     end
 

@@ -15,12 +15,6 @@ module PhcdevworksMembers
       visit member_profiles_url
       click_on "New Member/Profile"
 
-      fill_in "Member profile email", with: @member_profile.member_profile_email
-      fill_in "Member profile first name", with: @member_profile.member_profile_first_name
-      fill_in "Member profile last name", with: @member_profile.member_profile_last_name
-      fill_in "Member profile notes", with: @member_profile.member_profile_notes
-      fill_in "Member profile phone", with: @member_profile.member_profile_phone
-      fill_in "Member profile title", with: @member_profile.member_profile_title
       click_on "Create Profile"
 
       assert_text "Profile was successfully created"
@@ -31,12 +25,6 @@ module PhcdevworksMembers
       visit member_profiles_url
       click_on "Edit", match: :first
 
-      fill_in "Member profile email", with: @member_profile.member_profile_email
-      fill_in "Member profile first name", with: @member_profile.member_profile_first_name
-      fill_in "Member profile last name", with: @member_profile.member_profile_last_name
-      fill_in "Member profile notes", with: @member_profile.member_profile_notes
-      fill_in "Member profile phone", with: @member_profile.member_profile_phone
-      fill_in "Member profile title", with: @member_profile.member_profile_title
       click_on "Update Profile"
 
       assert_text "Profile was successfully updated"

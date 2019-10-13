@@ -15,13 +15,6 @@ module PhcdevworksMembers
       visit member_addresses_url
       click_on "New Member/Address"
 
-      fill_in "Member address city", with: @member_address.member_address_city
-      fill_in "Member address country", with: @member_address.member_address_country
-      fill_in "Member address line 1", with: @member_address.member_address_line_1
-      fill_in "Member address line 2", with: @member_address.member_address_line_2
-      fill_in "Member address postal code", with: @member_address.member_address_postal_code
-      fill_in "Member address province", with: @member_address.member_address_province
-      fill_in "Member address type", with: @member_address.member_address_type
       click_on "Create Address"
 
       assert_text "Address was successfully created"
@@ -32,13 +25,6 @@ module PhcdevworksMembers
       visit member_addresses_url
       click_on "Edit", match: :first
 
-      fill_in "Member address city", with: @member_address.member_address_city
-      fill_in "Member address country", with: @member_address.member_address_country
-      fill_in "Member address line 1", with: @member_address.member_address_line_1
-      fill_in "Member address line 2", with: @member_address.member_address_line_2
-      fill_in "Member address postal code", with: @member_address.member_address_postal_code
-      fill_in "Member address province", with: @member_address.member_address_province
-      fill_in "Member address type", with: @member_address.member_address_type
       click_on "Update Address"
 
       assert_text "Address was successfully updated"

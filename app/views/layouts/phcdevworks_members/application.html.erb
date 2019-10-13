@@ -2,78 +2,78 @@
 <html>
 <head>
 
-  <!-- SEO System -->
-  <% phc_seo_title "Members by PHCDevworks" %>
-  <% phc_seo_description "Application to Manage Member Information and Business Directory Listings " %>
-  <!-- SEO System -->
-
-  <!-- SEO and Site Description -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title><%= yield(:phc_seo_title) %></title>
-  <meta name="description" content="<%= yield(:phc_seo_description) %>">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
-  <link rel="canonical" href="http://phcdevworks.com">
-  <!-- SEO and Site Description -->
-
-  <!-- Rails Security Tags -->
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-  <!-- Rails Security Tags -->
-
-  <!-- CSS Styles -->
-  <%= stylesheet_link_tag "phcdevworks_members/application", media: "all", "data-turbolinks-track": "reload" %>
-  <!-- CSS Styles -->
-
-  <!-- Font -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"/>
-  <!-- Font -->
+    <!-- SEO System -->
+    <% phc_seo_title "PHCDevworks Members" %>
+    <% phc_seo_description "Ruby on Rails 6 Engine for Members Organization and Member Directory Management." %>
+    <!-- SEO System -->
+    
+    <!-- SEO and Site Description -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><%= yield(:phc_seo_title) %></title>
+    <meta name="description" content="<%= yield(:phc_seo_description) %>">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+    <link rel="canonical" href="http://phcdevworks.com">
+    <!-- SEO and Site Description -->
+    
+    <!-- Rails Security Tags -->
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <!-- Rails Security Tags -->
+    
+    <!-- CSS Styles -->
+    <%= stylesheet_link_tag "phcdevworks_members/application", media: "all" %>
+    <!-- CSS Styles -->
+    
+    <!-- Font -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"/>
+    <!-- Font -->
 
 </head>
 <body>
 
-  <!-- Page Container -->
-  <div id="page-container" class="fade page-sidebar-fixed page-header-fixed">
+    <!-- Page Container -->
+    <div id="page-container" class="fade page-sidebar-fixed page-header-fixed">
 
-    <!-- Page Header -->
-    <div id="header" class="header navbar-default">
-      <%= render "layouts/phcdevworks_members/components/backend/navigation/top_menu" %>
+        <!-- Page Header -->
+        <div id="header" class="header navbar-default">
+            <%= render "layouts/phcdevworks_members/components/backend/navigation/top_menu" %>
+        </div>
+        <!-- Page Header -->
+
+        <!-- Page Sidebar -->
+        <div id="sidebar" class="sidebar">
+            <%= render "layouts/phcdevworks_members/components/backend/sidebars/side_menu" %>
+        </div>
+        <div class="sidebar-bg"></div>
+        <!-- Page Sidebar -->
+
+        <!-- Page Content -->
+        <div id="content" class="content">
+            <%= render "phcdevworks_notifications/bootstrap/notifications" %>
+            <%= yield %>
+        </div>
+        <!-- Page Content -->
+
+        <!-- Footer Content -->
+        <div id="footer" class="row footer mb-4">
+            <%= render "layouts/phcdevworks_members/components/backend/footer/footer" %>
+        </div>
+        <!-- Footer Content -->
+
     </div>
-    <!-- Page Header -->
+    <!-- Page Container -->
 
-    <!-- Page Sidebar -->
-    <div id="sidebar" class="sidebar">
-      <%= render "layouts/phcdevworks_members/components/backend/sidebars/side_menu" %>
-    </div>
-    <div class="sidebar-bg"></div>
-    <!-- Page Sidebar -->
+    <!-- JavaScript -->
+    <%= javascript_include_tag "phcdevworks_members/application", "data-turbolinks-track": "reload" %>
+    <!-- JavaScript -->
 
-    <!-- Page Content -->
-    <div id="content" class="content">
-      <%= render "phcdevworks_notifications/bootstrap/notifications" %>
-      <%= yield %>
-    </div>
-    <!-- Page Content -->
-
-    <!-- Footer Content -->
-    <div id="footer" class="footer mb-4">
-      <%= render "layouts/phcdevworks_members/components/backend/footer/footer" %>
-    </div>
-    <!-- Footer Content -->
-
-  </div>
-  <!-- Page Container -->
-
-  <!-- JavaScript -->
-  <%= javascript_include_tag "phcdevworks_members/application", "data-turbolinks-track": "reload" %>
-  <!-- JavaScript -->
-
-  <!-- JavaScript Loader -->
-  <script>
+    <!-- JavaScript Loader -->
+    <script>
     $(document).ready(function() {
-      App.init();
+        App.init();
     });
-  </script>
-  <!-- JavaScript Loader -->
+    </script>
+    <!-- JavaScript Loader -->
 
 </body>
 </html>

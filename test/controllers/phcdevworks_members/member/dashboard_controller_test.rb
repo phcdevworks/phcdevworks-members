@@ -1,7 +1,7 @@
 require 'test_helper'
 
 module PhcdevworksMembers
-  class Info::DashboardControllerTest < ActionDispatch::IntegrationTest
+  class Member::DashboardControllerTest < ActionDispatch::IntegrationTest
     include Engine.routes.url_helpers
 
     # test "the truth" do

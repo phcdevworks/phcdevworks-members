@@ -1,239 +1,240 @@
 <!-- Sidebar for PHCDevworks Engines -->
 <div data-scrollbar="true" data-height="100%">
 
-  <!-- Sidebar - User Profile Menu -->
-  <ul class="nav">
-    <% if current_user %>
-      <li class="nav-profile">
-        <a href="javascript:;" data-toggle="nav-profile">
-          <div class="cover with-shadow"></div>
-          <div class="image">
-            <%= image_tag current_user.gravatar_url %>
-          </div>
-          <div class="info">
-            <b class="caret pull-right"></b>
-            <%= current_user.firstname + ' ' + current_user.lastname  %>
-            <small><%= current_user.username %></small>
-          </div>
-        </a>
-      </li>
-      <li>
-        <ul class="nav nav-profile">
-          <li>
-            <%= link_to phcdevworks_accounts.edit_user_registration_path do %>
-              <i class="fad fa-cogs"></i> Account Settings
+    <!-- Sidebar - User Profile Menu -->
+    <ul class="nav">
+        <% if current_user %>
+            <li class="nav-profile">
+                <a href="javascript:;" data-toggle="nav-profile">
+                    <div class="cover with-shadow"></div>
+                    <div class="image">
+                        <%= image_tag current_user.gravatar_url %>
+                    </div>
+                    <div class="info">
+                        <b class="caret pull-right"></b>
+                        <%= current_user.firstname + ' ' + current_user.lastname  %>
+                        <small><%= current_user.username %></small>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <ul class="nav nav-profile">
+                    <li>
+                        <%= link_to phcdevworks_accounts.edit_user_registration_path do %>
+                            <i class="fad fa-cogs"></i> Account Settings
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to phcdevworks_accounts.destroy_user_session_path do %>
+                            <i class="fad fa-sign-out-alt"></i> Logout
+                        <% end %>
+                    </li>
+                </ul>
+            </li>
+        <% end %>
+    </ul>
+    <!-- Sidebar - User Profile Menu -->
+    
+    <!-- Sidebar - Sidebar Navigation -->
+    <ul class="nav">
+
+        <% if defined?phcdevworks_members %>
+            <!-- Sidebar - Sidebar Navigation - PHCDevworks Members -->
+            <li class="nav-header">Membership Manager</li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-users"></i>
+                    <span>Member's Data</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller('phcdevworks_members/member/profiles') %>"><%= link_to('Profile Index', phcdevworks_members.member_profiles_path) %></li>
+                    <li class="<%= phc_menu_active_controller('phcdevworks_members/member/profiles#new') %>"><%= link_to('New Member Profile', phcdevworks_members.new_member_profile_path) %></li>
+                </ul>
+            </li>
+            <li class="nav-header">Member's Directory</li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-list-alt"></i>
+                    <span>Member's Directory</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller('phcdevworks_members/directory/categories') %>"><%= link_to('Directory Index', phcdevworks_members.directory_categories_path) %></li>
+                    <li class="<%= phc_menu_active_controller('phcdevworks_members/directory/categories#new') %>"><%= link_to('New Directory Listing', phcdevworks_members.new_directory_category_path) %></li>
+                </ul>
+            </li>
+            <!-- Sidebar - Sidebar Navigation - PHCDevworks Members -->
+        <% end %>
+
+        <% if defined?phcdevworks_press %>
+            <!-- Sidebar - Sidebar Navigation - PHCDevworks Press -->
+            <li class="nav-header">Article & Blogging</li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-newspaper"></i>
+                    <span>Article Posts</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller('phcdevworks_press/article/posts') %>"><%= link_to('Article Index', phcdevworks_press.article_posts_path) %></li>
+                    <li class="<%= phc_menu_active_controller('phcdevworks_press/article/posts#new') %>"><%= link_to('New Aritcle', phcdevworks_press.new_article_post_path) %></li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-sitemap"></i>
+                    <span>Article Categories</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller('phcdevworks_press/article/categories') %>"><%= link_to('Category Index', phcdevworks_press.article_categories_path) %></li>
+                    <li class="<%= phc_menu_active_controller('phcdevworks_press/article/categories#new') %>"><%= link_to('New Category', phcdevworks_press.new_article_category_path) %></li>
+                </ul>
+            </li>
+            <!-- Sidebar - Sidebar Navigation - PHCDevworks Press -->
+        <% end %>
+
+        <% if defined?phcdevworks_scripts %>
+            <!-- Sidebar - Sidebar Navigation - PHCDevworks Scripts -->
+            <li class="nav-header">Script CDN Listings</li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-laptop-code"></i>
+                    <span>Script Posts</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/listings') %>"><%= link_to "All Script Listings", phcdevworks_scripts.script_listings_path %></li>
+                    <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/listings#new') %>"><%= link_to "Add a New Listing", phcdevworks_scripts.new_script_listing_path %></li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-sitemap"></i>
+                    <span>Script Extras</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/authors') %>"><%= link_to "Script Authors", phcdevworks_scripts.script_authors_path %></li>
+                    <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/extensions') %>"><%= link_to "Script Extensions", phcdevworks_scripts.script_extensions_path %></li>
+                    <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/versions') %>"><%= link_to "Script Versions", phcdevworks_scripts.script_versions_path %></li>
+                </ul>
+            </li>
+            <li class="nav-header">Code Snippets</li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-code"></i>
+                    <span>Code Snippets</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/posts') %>"><%= link_to 'Snippet Index', phcdevworks_scripts.snippet_posts_path %></li>
+                    <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/posts#new') %>"><%= link_to 'New Snippet', phcdevworks_scripts.new_snippet_post_path %></li>
+                </ul>
+            </li>
+            <!-- Sidebar - Sidebar Navigation - PHCDevworks Scripts -->
+        <% end %>
+
+        <% if defined?phcdevworks_real_estate %>
+            <!-- Sidebar - Sidebar Navigation - PHCDevworks RealEstate -->
+            <li class="nav-header">Property Listings</li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-home-lg"></i>
+                    <span>Property Listings</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller('phcdevworks_real_estate/property/listings') %>"><%= link_to 'Listing Index', phcdevworks_real_estate.property_listings_path %></li>
+                    <li class="<%= phc_menu_active_controller('phcdevworks_real_estate/property/listings#new') %>"><%= link_to 'New Listing', phcdevworks_real_estate.new_property_listing_path %></li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-list-alt"></i>
+                    <span>Listing Features</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller('phcdevworks_real_estate/property/listings') %>"><%= link_to 'Features Index', phcdevworks_real_estate.property_features_path %></li>
+                    <li class="<%= phc_menu_active_controller('phcdevworks_real_estate/property/listings#new') %>"><%= link_to 'New Features', phcdevworks_real_estate.new_property_feature_path %></li>
+                </ul>
+            </li>
+            <!-- Sidebar - Sidebar Navigation - PHCDevworks RealEstate -->
+        <% end %>
+
+        <% if defined?phcdevworks_tutorials %>
+            <!-- Sidebar - Sidebar Navigation - PHCDevworks RealEstate -->
+            <li class="nav-header">Tutorial Posts</li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                <b class="caret"></b>
+                <i class="fad fa-chalkboard-teacher"></i>
+                <span>Tutorial Posts</span>
+                </a>
+                <ul class="sub-menu">
+                <li class="<%= phc_menu_active_controller('phcdevworks_tutorials/tutorials/posts') %>"><%= link_to 'Tutorial Index', phcdevworks_tutorials.tutorial_posts_path %></li>
+                <li class="<%= phc_menu_active_controller('phcdevworks_tutorials/tutorials/posts#new') %>"><%= link_to 'New Tutorial', phcdevworks_tutorials.new_tutorial_post_path %></li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-sitemap"></i>
+                    <span>Tutorial Categories</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller('phcdevworks_tutorials/tutorials/categories') %>"><%= link_to 'Category Index', phcdevworks_tutorials.tutorial_categories_path %></li>
+                    <li class="<%= phc_menu_active_controller('phcdevworks_tutorials/tutorials/categories#new') %>"><%= link_to 'New Category', phcdevworks_tutorials.new_tutorial_category_path %></li>
+                </ul>
+            </li>
+            <!-- Sidebar - Sidebar Navigation - PHCDevworks RealEstate -->
+        <% end %>
+
+        <% if current_user && current_user.admin? %>
+            <!-- Sidebar - Sidebar Navigation - PHCAccounts Admin Options -->
+            <li class="nav-header">User Administration</li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-user"></i>
+                    <span>Admin</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller('phcdevworks_accounts/admin/users') %>"><%= link_to 'User List', phcdevworks_accounts.admin_users_index_path %></li>
+                </ul>
+            </li>
+            <!-- Sidebar - Sidebar Navigation - PHCAccounts Admin Options -->
             <% end %>
-          </li>
-          <li>
-            <%= link_to phcdevworks_accounts.destroy_user_session_path do %>
-              <i class="fad fa-sign-out-alt"></i> Logout
-            <% end %>
-          </li>
-        </ul>
-      </li>
-    <% end %>
-  </ul>
-  <!-- Sidebar - User Profile Menu -->
+    
+            <% if current_user %>
+            <!-- Sidebar - Sidebar Navigation - PHCAccounts User Options -->
+            <li class="nav-header">Your Account</li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-user"></i>
+                    <span>Accounts Settings</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller('phcdevworks_accounts/user/edit') %>"><%= link_to 'Settings', phcdevworks_accounts.edit_user_registration_path %></li>
+                    <li class="<%= phc_menu_active_controller('phcdevworks_accounts/user/new') %>"><%= link_to 'Logout', phcdevworks_accounts.destroy_user_session_path, method: :delete %></li>
+                </ul>
+            </li>
+            <!-- Sidebar - Sidebar Navigation - PHCAccounts User Options -->
+        <% end %>
 
-  <!-- Sidebar - Sidebar Navigation -->
-  <ul class="nav">
+        <!-- Sidebar - Sidebar Minifier -->
+        <li>
+            <a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify">
+                <i class="fa fa-angle-double-left"></i>
+            </a>
+        </li>
+        <!-- Sidebar - Sidebar Minifier -->
 
-    <% if defined?phcdevworks_members %>
-      <!-- Sidebar - Sidebar Navigation - PHCDevworks Members -->
-      <li class="nav-header">Membership Manager</li>
-      <li class="has-sub">
-        <a href="javascript:;">
-          <b class="caret"></b>
-          <i class="fad fa-users"></i>
-          <span>Member's Data</span>
-        </a>
-        <ul class="sub-menu">
-          <li class="<%= phc_menu_active_controller('phcdevworks_members/member/profiles') %>"><%= link_to('Profile Index', phcdevworks_members.member_profiles_path) %></li>
-          <li class="<%= phc_menu_active_controller('phcdevworks_members/member/profiles#new') %>"><%= link_to('New Member Profile', phcdevworks_members.new_member_profile_path) %></li>
-        </ul>
-      </li>
-      <li class="has-sub">
-        <a href="javascript:;">
-          <b class="caret"></b>
-          <i class="fad fa-list-alt"></i>
-          <span>Member's Directory</span>
-        </a>
-        <ul class="sub-menu">
-          <li class="<%= phc_menu_active_controller('phcdevworks_members/directory/categories') %>"><%= link_to('Directory Index', phcdevworks_members.directory_categories_path) %></li>
-          <li class="<%= phc_menu_active_controller('phcdevworks_members/directory/categories#new') %>"><%= link_to('New Directory Listing', phcdevworks_members.new_directory_category_path) %></li>
-        </ul>
-      </li>
-      <!-- Sidebar - Sidebar Navigation - PHCDevworks Members -->
-    <% end %>
-
-    <% if defined?phcdevworks_press %>
-      <!-- Sidebar - Sidebar Navigation - PHCDevworks Press -->
-      <li class="nav-header">Article Management</li>
-      <li class="has-sub">
-        <a href="javascript:;">
-          <b class="caret"></b>
-          <i class="fad fa-newspaper"></i>
-          <span>Article Posts</span>
-        </a>
-        <ul class="sub-menu">
-          <li class="<%= phc_menu_active_controller('phcdevworks_press/article/posts') %>"><%= link_to('Article Index', phcdevworks_press.article_posts_path) %></li>
-          <li class="<%= phc_menu_active_controller('phcdevworks_press/article/posts#new') %>"><%= link_to('New Aritcle', phcdevworks_press.new_article_post_path) %></li>
-        </ul>
-      </li>
-      <li class="has-sub">
-        <a href="javascript:;">
-          <b class="caret"></b>
-          <i class="fad fa-sitemap"></i>
-          <span>Article Categories</span>
-        </a>
-        <ul class="sub-menu">
-          <li class="<%= phc_menu_active_controller('phcdevworks_press/article/categories') %>"><%= link_to('Category Index', phcdevworks_press.article_categories_path) %></li>
-          <li class="<%= phc_menu_active_controller('phcdevworks_press/article/categories#new') %>"><%= link_to('New Category', phcdevworks_press.new_article_category_path) %></li>
-        </ul>
-      </li>
-      <!-- Sidebar - Sidebar Navigation - PHCDevworks Press -->
-    <% end %>
-
-    <% if defined?phcdevworks_scripts %>
-      <!-- Sidebar - Sidebar Navigation - PHCDevworks Scripts -->
-      <li class="nav-header">Script Management</li>
-      <li class="has-sub">
-        <a href="javascript:;">
-          <b class="caret"></b>
-          <i class="fad fa-laptop-code"></i>
-          <span>Script Posts</span>
-        </a>
-        <ul class="sub-menu">
-          <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/listings') %>"><%= link_to "All Script Listings", phcdevworks_scripts.script_listings_path %></li>
-          <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/listings#new') %>"><%= link_to "Add a New Listing", phcdevworks_scripts.new_script_listing_path %></li>
-        </ul>
-      </li>
-      <li class="has-sub">
-        <a href="javascript:;">
-          <b class="caret"></b>
-          <i class="fad fa-sitemap"></i>
-          <span>Script Extras</span>
-        </a>
-        <ul class="sub-menu">
-          <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/authors') %>"><%= link_to "Script Authors", phcdevworks_scripts.script_authors_path %></li>
-          <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/extensions') %>"><%= link_to "Script Extensions", phcdevworks_scripts.script_extensions_path %></li>
-          <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/versions') %>"><%= link_to "Script Versions", phcdevworks_scripts.script_versions_path %></li>
-        </ul>
-      </li>
-      <li class="nav-header">Code Snippets</li>
-      <li class="has-sub">
-        <a href="javascript:;">
-          <b class="caret"></b>
-          <i class="fad fa-code"></i>
-          <span>Code Snippets</span>
-        </a>
-        <ul class="sub-menu">
-          <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/posts') %>"><%= link_to 'Snippet Index', phcdevworks_scripts.snippet_posts_path %></li>
-          <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/posts#new') %>"><%= link_to 'New Snippet', phcdevworks_scripts.new_snippet_post_path %></li>
-        </ul>
-      </li>
-      <!-- Sidebar - Sidebar Navigation - PHCDevworks Scripts -->
-    <% end %>
-
-    <% if defined?phcdevworks_real_estate %>
-      <!-- Sidebar - Sidebar Navigation - PHCDevworks RealEstate -->
-      <li class="nav-header">Listing Management</li>
-      <li class="has-sub">
-        <a href="javascript:;">
-          <b class="caret"></b>
-          <i class="fad fa-home-lg"></i>
-          <span>Property Listings</span>
-        </a>
-        <ul class="sub-menu">
-          <li class="<%= phc_menu_active_controller('phcdevworks_real_estate/property/listings') %>"><%= link_to 'Listing Index', phcdevworks_real_estate.property_listings_path %></li>
-          <li class="<%= phc_menu_active_controller('phcdevworks_real_estate/property/listings#new') %>"><%= link_to 'New Listing', phcdevworks_real_estate.new_property_listing_path %></li>
-        </ul>
-      </li>
-      <li class="has-sub">
-        <a href="javascript:;">
-          <b class="caret"></b>
-          <i class="fad fa-list-alt"></i>
-          <span>Listing Features</span>
-        </a>
-        <ul class="sub-menu">
-          <li class="<%= phc_menu_active_controller('phcdevworks_real_estate/property/listings') %>"><%= link_to 'Features Index', phcdevworks_real_estate.property_features_path %></li>
-          <li class="<%= phc_menu_active_controller('phcdevworks_real_estate/property/listings#new') %>"><%= link_to 'New Features', phcdevworks_real_estate.new_property_feature_path %></li>
-        </ul>
-      </li>
-      <!-- Sidebar - Sidebar Navigation - PHCDevworks RealEstate -->
-    <% end %>
-
-    <% if defined?phcdevworks_tutorials %>
-      <!-- Sidebar - Sidebar Navigation - PHCDevworks RealEstate -->
-      <li class="nav-header">Tutorials</li>
-      <li class="has-sub">
-        <a href="javascript:;">
-          <b class="caret"></b>
-          <i class="fad fa-chalkboard-teacher"></i>
-          <span>Tutorial Posts</span>
-        </a>
-        <ul class="sub-menu">
-          <li class="<%= phc_menu_active_controller('phcdevworks_tutorials/tutorials/posts') %>"><%= link_to 'Tutorial Index', phcdevworks_tutorials.tutorial_posts_path %></li>
-          <li class="<%= phc_menu_active_controller('phcdevworks_tutorials/tutorials/posts#new') %>"><%= link_to 'New Tutorial', phcdevworks_tutorials.new_tutorial_post_path %></li>
-        </ul>
-      </li>
-      <li class="has-sub">
-        <a href="javascript:;">
-          <b class="caret"></b>
-          <i class="fad fa-sitemap"></i>
-          <span>Tutorial Categories</span>
-        </a>
-        <ul class="sub-menu">
-          <li class="<%= phc_menu_active_controller('phcdevworks_tutorials/tutorials/categories') %>"><%= link_to 'Category Index', phcdevworks_tutorials.tutorial_categories_path %></li>
-          <li class="<%= phc_menu_active_controller('phcdevworks_tutorials/tutorials/categories#new') %>"><%= link_to 'New Category', phcdevworks_tutorials.new_tutorial_category_path %></li>
-        </ul>
-      </li>
-      <!-- Sidebar - Sidebar Navigation - PHCDevworks RealEstate -->
-    <% end %>
-
-    <% if current_user && current_user.admin? %>
-      <!-- Sidebar - Sidebar Navigation - PHCAccounts Admin Options -->
-      <li class="nav-header">User Administration</li>
-      <li class="has-sub">
-        <a href="javascript:;">
-          <b class="caret"></b>
-          <i class="fad fa-user"></i>
-          <span>Admin</span>
-        </a>
-        <ul class="sub-menu">
-          <li class="<%= phc_menu_active_controller('phcdevworks_accounts/admin/users') %>"><%= link_to 'User List', phcdevworks_accounts.admin_users_index_path %></li>
-        </ul>
-      </li>
-      <!-- Sidebar - Sidebar Navigation - PHCAccounts Admin Options -->
-    <% end %>
-
-    <% if current_user %>
-      <!-- Sidebar - Sidebar Navigation - PHCAccounts User Options -->
-      <li class="nav-header">Your Account</li>
-      <li class="has-sub">
-        <a href="javascript:;">
-          <b class="caret"></b>
-          <i class="fad fa-user"></i>
-          <span>Accounts Settings</span>
-        </a>
-        <ul class="sub-menu">
-          <li class="<%= phc_menu_active_controller('phcdevworks_accounts/user/edit') %>"><%= link_to 'Settings', phcdevworks_accounts.edit_user_registration_path %></li>
-          <li class="<%= phc_menu_active_controller('phcdevworks_accounts/user/new') %>"><%= link_to 'Logout', phcdevworks_accounts.destroy_user_session_path, method: :delete %></li>
-        </ul>
-      </li>
-      <!-- Sidebar - Sidebar Navigation - PHCAccounts User Options -->
-    <% end %>
-
-    <!-- Sidebar - Sidebar Minifier -->
-    <li>
-      <a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify">
-        <i class="fa fa-angle-double-left"></i>
-      </a>
-    </li>
-    <!-- Sidebar - Sidebar Minifier -->
-
-  </ul>
-  <!-- Sidebar - Sidebar Navigation -->
+    </ul>
+    <!-- Sidebar - Sidebar Navigation -->
 
 </div>
 <!-- Sidebar for PHCDevworks Engines -->

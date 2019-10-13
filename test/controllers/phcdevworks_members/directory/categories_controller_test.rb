@@ -20,7 +20,7 @@ module PhcdevworksMembers
 
     test "should create directory_category" do
       assert_difference('Directory::Category.count') do
-        post directory_categories_url, params: { directory_category: { category_name: @directory_category.category_name } }
+        post directory_categories_url, params: { directory_category: {  } }
       end
 
       assert_redirected_to directory_category_url(Directory::Category.last)
@@ -37,7 +37,7 @@ module PhcdevworksMembers
     end
 
     test "should update directory_category" do
-      patch directory_category_url(@directory_category), params: { directory_category: { category_name: @directory_category.category_name } }
+      patch directory_category_url(@directory_category), params: { directory_category: {  } }
       assert_redirected_to directory_category_url(@directory_category)
     end
 

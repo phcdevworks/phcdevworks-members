@@ -1,37 +1,37 @@
 <!-- Topbar - Navigation Header -->
 <div class="navbar-header">
-  <%= link_to phcdevworks_members.member_profiles_path, class: "navbar-brand" do %>
-    <b>PHCDevworks</b> Members
-  <% end %>
-  <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-  </button>
+    <%= link_to phcdevworks_members.member_profiles_path, class: "navbar-brand" do %>
+        <strong>PHCDevworks</strong>Members
+    <% end %>
+    <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
 </div>
 <!-- Topbar - Navigation Header -->
 
 <!-- Topbar - Navigation Main -->
 <% if current_user %>
-  <ul class="navbar-nav navbar-right">
+    <ul class="navbar-nav navbar-right">
 
-    <!-- Topbar - Navigation Main - User Menu -->
-    <li class="dropdown navbar-user">
-      <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-        <%= image_tag current_user.gravatar_url %>
-        <span class="d-none d-md-inline"><%= current_user.firstname + ' ' + current_user.lastname  %></span> <b class="caret"></b>
-      </a>
-      <div class="dropdown-menu dropdown-menu-right">
-        <%= link_to phcdevworks_accounts.edit_user_registration_path, class: "dropdown-item" do %>
-          <i class="fad fa-cogs"></i> Account Settings
-        <% end %>
-        <%= link_to phcdevworks_accounts.destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
-          <i class="fad fa-sign-out-alt"></i> Logout
-        <% end %>
-      </div>
-    </li>
-    <!-- Topbar - Navigation Main - User Menu -->
+        <!-- Topbar - Navigation Main - User Menu -->
+        <li class="dropdown navbar-user">
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                <%= image_tag current_user.gravatar_url %>
+                <span class="d-none d-md-inline"><%= current_user.firstname + ' ' + current_user.lastname  %></span> <b class="caret"></b>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <%= link_to phcdevworks_accounts.edit_user_registration_path, class: "dropdown-item" do %>
+                    <i class="fad fa-cogs"></i> Account Settings
+                <% end %>
+                <%= link_to phcdevworks_accounts.destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
+                    <i class="fad fa-sign-out-alt"></i> Logout
+                <% end %>
+            </div>
+        </li>
+        <!-- Topbar - Navigation Main - User Menu -->
 
-  </ul>
+    </ul>
 <% end %>
 <!-- Topbar - Navigation Main -->
