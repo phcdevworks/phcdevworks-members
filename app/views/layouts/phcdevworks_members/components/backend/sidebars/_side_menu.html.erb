@@ -12,7 +12,7 @@
                     </div>
                     <div class="info">
                         <b class="caret pull-right"></b>
-                        <%= current_user.firstname + ' ' + current_user.lastname  %>
+                        <%= current_user.firstname + " " + current_user.lastname  %>
                         <small><%= current_user.username %></small>
                     </div>
                 </a>
@@ -45,31 +45,48 @@
                 <a href="javascript:;">
                     <b class="caret"></b>
                     <i class="fad fa-users"></i>
-                    <span>Member's Data</span>
+                    <span>Member"s Data</span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller('phcdevworks_members/member/profiles') %>"><%= link_to('Profile Index', phcdevworks_members.member_profiles_path) %></li>
-                    <li class="<%= phc_menu_active_controller('phcdevworks_members/member/profiles#new') %>"><%= link_to('New Member Profile', phcdevworks_members.new_member_profile_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_members/member/profiles") %>"><%= link_to("Profile Index", phcdevworks_members.member_profiles_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_members/member/profiles#new") %>"><%= link_to("New Member Profile", phcdevworks_members.new_member_profile_path) %></li>
                 </ul>
             </li>
-            <li class="nav-header">Member's Directory</li>
+            <li class="nav-header">Member"s Directory</li>
             <li class="has-sub">
                 <a href="javascript:;">
                     <b class="caret"></b>
                     <i class="fad fa-list-alt"></i>
-                    <span>Member's Directory</span>
+                    <span>Member"s Directory</span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller('phcdevworks_members/directory/categories') %>"><%= link_to('Directory Index', phcdevworks_members.directory_categories_path) %></li>
-                    <li class="<%= phc_menu_active_controller('phcdevworks_members/directory/categories#new') %>"><%= link_to('New Directory Listing', phcdevworks_members.new_directory_category_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_members/directory/categories") %>"><%= link_to("Directory Index", phcdevworks_members.directory_categories_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_members/directory/categories#new") %>"><%= link_to("New Directory Listing", phcdevworks_members.new_directory_category_path) %></li>
                 </ul>
             </li>
             <!-- Sidebar - Sidebar Navigation - PHCDevworks Members -->
         <% end %>
 
+        <% if defined?phcdevworks_portfolio %>
+            <!-- Sidebar - Sidebar Navigation - PHCDevworks Press -->
+            <li class="nav-header">Portfolio</li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-briefcase"></i>
+                    <span>Project List</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller("phcdevworks_portfolio/project/posts") %>"><%= link_to("Project Index", phcdevworks_portfolio.project_posts_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_portfolio/project/posts#new") %>"><%= link_to("New Project", phcdevworks_portfolio.new_project_post_path) %></li>
+                </ul>
+            </li>
+            <!-- Sidebar - Sidebar Navigation - PHCDevworks Press -->
+        <% end %>
+
         <% if defined?phcdevworks_press %>
             <!-- Sidebar - Sidebar Navigation - PHCDevworks Press -->
-            <li class="nav-header">Article & Blogging</li>
+            <li class="nav-header">Articles & Blogging</li>
             <li class="has-sub">
                 <a href="javascript:;">
                     <b class="caret"></b>
@@ -77,8 +94,8 @@
                     <span>Article Posts</span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller('phcdevworks_press/article/posts') %>"><%= link_to('Article Index', phcdevworks_press.article_posts_path) %></li>
-                    <li class="<%= phc_menu_active_controller('phcdevworks_press/article/posts#new') %>"><%= link_to('New Aritcle', phcdevworks_press.new_article_post_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_press/article/posts") %>"><%= link_to("Article Index", phcdevworks_press.article_posts_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_press/article/posts#new") %>"><%= link_to("New Aritcle", phcdevworks_press.new_article_post_path) %></li>
                 </ul>
             </li>
             <li class="has-sub">
@@ -88,8 +105,8 @@
                     <span>Article Categories</span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller('phcdevworks_press/article/categories') %>"><%= link_to('Category Index', phcdevworks_press.article_categories_path) %></li>
-                    <li class="<%= phc_menu_active_controller('phcdevworks_press/article/categories#new') %>"><%= link_to('New Category', phcdevworks_press.new_article_category_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_press/article/categories") %>"><%= link_to("Category Index", phcdevworks_press.article_categories_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_press/article/categories#new") %>"><%= link_to("New Category", phcdevworks_press.new_article_category_path) %></li>
                 </ul>
             </li>
             <!-- Sidebar - Sidebar Navigation - PHCDevworks Press -->
@@ -105,8 +122,8 @@
                     <span>Script Posts</span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/listings') %>"><%= link_to "All Script Listings", phcdevworks_scripts.script_listings_path %></li>
-                    <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/listings#new') %>"><%= link_to "Add a New Listing", phcdevworks_scripts.new_script_listing_path %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_scripts/script/listings") %>"><%= link_to "All Script Listings", phcdevworks_scripts.script_listings_path %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_scripts/script/listings#new") %>"><%= link_to "Add a New Listing", phcdevworks_scripts.new_script_listing_path %></li>
                 </ul>
             </li>
             <li class="has-sub">
@@ -116,9 +133,9 @@
                     <span>Script Extras</span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/authors') %>"><%= link_to "Script Authors", phcdevworks_scripts.script_authors_path %></li>
-                    <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/extensions') %>"><%= link_to "Script Extensions", phcdevworks_scripts.script_extensions_path %></li>
-                    <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/versions') %>"><%= link_to "Script Versions", phcdevworks_scripts.script_versions_path %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_scripts/script/authors") %>"><%= link_to "Script Authors", phcdevworks_scripts.script_authors_path %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_scripts/script/extensions") %>"><%= link_to "Script Extensions", phcdevworks_scripts.script_extensions_path %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_scripts/script/versions") %>"><%= link_to "Script Versions", phcdevworks_scripts.script_versions_path %></li>
                 </ul>
             </li>
             <li class="nav-header">Code Snippets</li>
@@ -129,8 +146,8 @@
                     <span>Code Snippets</span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/posts') %>"><%= link_to 'Snippet Index', phcdevworks_scripts.snippet_posts_path %></li>
-                    <li class="<%= phc_menu_active_controller('phcdevworks_scripts/script/posts#new') %>"><%= link_to 'New Snippet', phcdevworks_scripts.new_snippet_post_path %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_scripts/script/posts") %>"><%= link_to "Snippet Index", phcdevworks_scripts.snippet_posts_path %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_scripts/script/posts#new") %>"><%= link_to "New Snippet", phcdevworks_scripts.new_snippet_post_path %></li>
                 </ul>
             </li>
             <!-- Sidebar - Sidebar Navigation - PHCDevworks Scripts -->
@@ -146,8 +163,8 @@
                     <span>Property Listings</span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller('phcdevworks_real_estate/property/listings') %>"><%= link_to 'Listing Index', phcdevworks_real_estate.property_listings_path %></li>
-                    <li class="<%= phc_menu_active_controller('phcdevworks_real_estate/property/listings#new') %>"><%= link_to 'New Listing', phcdevworks_real_estate.new_property_listing_path %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_real_estate/property/listings") %>"><%= link_to "Listing Index", phcdevworks_real_estate.property_listings_path %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_real_estate/property/listings#new") %>"><%= link_to "New Listing", phcdevworks_real_estate.new_property_listing_path %></li>
                 </ul>
             </li>
             <li class="has-sub">
@@ -157,8 +174,8 @@
                     <span>Listing Features</span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller('phcdevworks_real_estate/property/listings') %>"><%= link_to 'Features Index', phcdevworks_real_estate.property_features_path %></li>
-                    <li class="<%= phc_menu_active_controller('phcdevworks_real_estate/property/listings#new') %>"><%= link_to 'New Features', phcdevworks_real_estate.new_property_feature_path %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_real_estate/property/listings") %>"><%= link_to "Features Index", phcdevworks_real_estate.property_features_path %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_real_estate/property/listings#new") %>"><%= link_to "New Features", phcdevworks_real_estate.new_property_feature_path %></li>
                 </ul>
             </li>
             <!-- Sidebar - Sidebar Navigation - PHCDevworks RealEstate -->
@@ -174,8 +191,8 @@
                 <span>Tutorial Posts</span>
                 </a>
                 <ul class="sub-menu">
-                <li class="<%= phc_menu_active_controller('phcdevworks_tutorials/tutorials/posts') %>"><%= link_to 'Tutorial Index', phcdevworks_tutorials.tutorial_posts_path %></li>
-                <li class="<%= phc_menu_active_controller('phcdevworks_tutorials/tutorials/posts#new') %>"><%= link_to 'New Tutorial', phcdevworks_tutorials.new_tutorial_post_path %></li>
+                <li class="<%= phc_menu_active_controller("phcdevworks_tutorials/tutorials/posts") %>"><%= link_to "Tutorial Index", phcdevworks_tutorials.tutorial_posts_path %></li>
+                <li class="<%= phc_menu_active_controller("phcdevworks_tutorials/tutorials/posts#new") %>"><%= link_to "New Tutorial", phcdevworks_tutorials.new_tutorial_post_path %></li>
                 </ul>
             </li>
             <li class="has-sub">
@@ -185,8 +202,8 @@
                     <span>Tutorial Categories</span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller('phcdevworks_tutorials/tutorials/categories') %>"><%= link_to 'Category Index', phcdevworks_tutorials.tutorial_categories_path %></li>
-                    <li class="<%= phc_menu_active_controller('phcdevworks_tutorials/tutorials/categories#new') %>"><%= link_to 'New Category', phcdevworks_tutorials.new_tutorial_category_path %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_tutorials/tutorials/categories") %>"><%= link_to "Category Index", phcdevworks_tutorials.tutorial_categories_path %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_tutorials/tutorials/categories#new") %>"><%= link_to "New Category", phcdevworks_tutorials.new_tutorial_category_path %></li>
                 </ul>
             </li>
             <!-- Sidebar - Sidebar Navigation - PHCDevworks RealEstate -->
@@ -202,7 +219,7 @@
                     <span>Admin</span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller('phcdevworks_accounts/admin/users') %>"><%= link_to 'User List', phcdevworks_accounts.admin_users_index_path %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_accounts/admin/users") %>"><%= link_to "User List", phcdevworks_accounts.admin_users_index_path %></li>
                 </ul>
             </li>
             <!-- Sidebar - Sidebar Navigation - PHCAccounts Admin Options -->
@@ -218,8 +235,8 @@
                     <span>Accounts Settings</span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller('phcdevworks_accounts/user/edit') %>"><%= link_to 'Settings', phcdevworks_accounts.edit_user_registration_path %></li>
-                    <li class="<%= phc_menu_active_controller('phcdevworks_accounts/user/new') %>"><%= link_to 'Logout', phcdevworks_accounts.destroy_user_session_path, method: :delete %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_accounts/user/edit") %>"><%= link_to "Settings", phcdevworks_accounts.edit_user_registration_path %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_accounts/user/new") %>"><%= link_to "Logout", phcdevworks_accounts.destroy_user_session_path, method: :delete %></li>
                 </ul>
             </li>
             <!-- Sidebar - Sidebar Navigation - PHCAccounts User Options -->
