@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
     spec.email       = ["info@phcdevworks.com"]
     spec.homepage    = "https://phcdevworks.com/"
     spec.summary     = "Rails 6 - Engine - Members"
-    spec.description = "Ruby on Rails 6 Engine to Organize Member and Manage Online Member Directory."
+    spec.description = "Ruby on Rails 6 Engine to Organize Members and Manage an Online Members Directory & Listings."
     spec.license     = "MIT"
 
     # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
