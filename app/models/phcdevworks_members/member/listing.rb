@@ -5,11 +5,11 @@ module PhcdevworksMembers
     extend FriendlyId
 
     # Paper Trail Initialize
-    has_paper_trail :class_name => 'PhcdevworksMembers::ListingVersions'
+    has_paper_trail :class_name => "PhcdevworksMembers::ListingVersions"
 
     # Relationships
-    belongs_to :profile, class_name: 'PhcdevworksMembers::Member::Profile'
-    has_and_belongs_to_many :categories, class_name: 'PhcdevworksMembers::Directory::Category', :join_table => 'categories_listings'
+    belongs_to :profile, class_name: "PhcdevworksMembers::Member::Profile"
+    has_and_belongs_to_many :categories, class_name: "PhcdevworksMembers::Directory::Category", :join_table => "phcdevworks_members_categories_lstings"
 
     # Form Fields Validation
     validates :listing_company_name,
