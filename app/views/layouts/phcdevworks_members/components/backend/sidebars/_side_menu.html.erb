@@ -81,6 +81,28 @@
                     <li class="<%= phc_menu_active_controller("phcdevworks_portfolio/project/posts#new") %>"><%= link_to("New Project", phcdevworks_portfolio.new_project_post_path) %></li>
                 </ul>
             </li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-sitemap"></i>
+                    <span>Project Categories</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller("phcdevworks_portfolio/project/posts") %>"><%= link_to("Project Category", phcdevworks_portfolio.project_categories_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_portfolio/project/posts#new") %>"><%= link_to("New Category", phcdevworks_portfolio.new_project_category_path) %></li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-folders"></i>
+                    <span>Project Types</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller("phcdevworks_portfolio/project/posts") %>"><%= link_to("Project Type", phcdevworks_portfolio.project_types_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_portfolio/project/posts#new") %>"><%= link_to("New Types", phcdevworks_portfolio.new_project_type_path) %></li>
+                </ul>
+            </li>
             <!-- Sidebar - Sidebar Navigation - PHCDevworks Press -->
         <% end %>
 
