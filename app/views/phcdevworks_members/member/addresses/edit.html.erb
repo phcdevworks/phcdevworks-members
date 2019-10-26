@@ -1,8 +1,8 @@
 <!-- PHCTitleSEO Title Variables -->
 <% phc_title "Member Address Manager" %>
-<% phc_title_tagline "Update New Address for " + @member_profile.member_profile_first_name + " " + @member_profile.member_profile_last_name %>
+<% phc_title_tagline "Update New Address for " + @member_profile.profile_first_name + " " + @member_profile.profile_last_name %>
 <% phc_breadcrumb_one link_to "Members List", phcdevworks_members.member_profiles_path %>
-<% phc_breadcrumb_two link_to "Addresses for " + @member_profile.member_profile_first_name + " " + @member_profile.member_profile_last_name, phcdevworks_members.member_profile_addresses_path %>
+<% phc_breadcrumb_two link_to "Addresses for " + @member_profile.profile_first_name + " " + @member_profile.profile_last_name, phcdevworks_members.member_profile_addresses_path %>
 <% phc_breadcrumb_three yield(:phc_title_tagline) %>
 <!-- PHCTitleSEO Title Variables -->
 

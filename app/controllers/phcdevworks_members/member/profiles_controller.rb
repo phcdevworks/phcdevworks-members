@@ -81,7 +81,7 @@ module PhcdevworksMembers
 
     # Whitelist
     def member_profile_params
-      params.require(:member_profile).permit(:member_profile_first_name, :member_profile_last_name, :member_profile_title, :member_profile_email, :member_profile_phone, :member_profile_notes, :slug, :user_id, :org_id)
+      params.require(:member_profile).permit(:profile_first_name, :profile_last_name, :profile_title, :profile_email, :profile_phone, :profile_notes, :slug, :user_id, :org_id)
     end
 
   end

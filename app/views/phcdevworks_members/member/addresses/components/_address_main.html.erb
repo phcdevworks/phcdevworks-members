@@ -1,12 +1,12 @@
 <div class="row">
 	<div class="col-6">
 		<address class="m-t-5 m-b-5">
-			<div><strong class="text-inverse"><%= @member_profile.member_profile_first_name + " " + @member_profile.member_profile_last_name  %></strong></div>
-			<div><strong class="text-inverse"><%= @member_address.member_address_type + " Address" %></strong></div>
-			<div><%= @member_address.member_address_line_1 %></div>
-			<div><%= @member_address.member_address_line_2 %></div>
-			<div><%= @member_address.member_address_city %> <%= @member_address.member_address_province %></div>
-			<div><%= @member_address.member_address_country %> <%= @member_address.member_address_postal_code %></div>
+			<div><strong class="text-inverse"><%= @member_profile.profile_first_name + " " + @member_profile.profile_last_name  %></strong></div>
+			<div><strong class="text-inverse"><%= @member_address.address_type + " Address" %></strong></div>
+			<div><%= @member_address.address_line_1 %></div>
+			<div><%= @member_address.address_line_2 %></div>
+			<div><%= @member_address.address_city %> <%= @member_address.address_province %></div>
+			<div><%= @member_address.address_country %> <%= @member_address.address_postal_code %></div>
 		</address>
 	</div>
 </div>

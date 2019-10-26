@@ -1,8 +1,8 @@
 <!-- PHCTitleSEO Title Variables -->
 <% phc_title "Member Listings Manager" %>
-<% phc_title_tagline "Listings for " + @member_profile.member_profile_first_name + " " + @member_profile.member_profile_last_name %>
+<% phc_title_tagline "Listings for " + @member_profile.profile_first_name + " " + @member_profile.profile_last_name %>
 <% phc_breadcrumb_one link_to "Members List", phcdevworks_members.member_profiles_path %>
-<% phc_breadcrumb_two link_to @member_profile.member_profile_first_name + " " + @member_profile.member_profile_last_name + " Details", phcdevworks_members.member_profile_path(@member_profile) %>
+<% phc_breadcrumb_two link_to @member_profile.profile_first_name + " " + @member_profile.profile_last_name + " Details", phcdevworks_members.member_profile_path(@member_profile) %>
 <% phc_breadcrumb_three yield(:phc_title_tagline) %>
 <!-- PHCTitleSEO Title Variables -->
 
@@ -77,7 +77,7 @@
 				<!-- New Button -->
 				<%= link_to phcdevworks_members.new_member_profile_listing_path, class: "btn btn-primary btn-sm" do %>
 					<i class="fad fa-plus-circle"></i>
-					<%= "Add a New Listing for " + @member_profile .member_profile_first_name + " " + @member_profile .member_profile_last_name %>
+					<%= "Add a New Listing for " + @member_profile .profile_first_name + " " + @member_profile .profile_last_name %>
 				<% end %>
 				<!-- New Button -->
 

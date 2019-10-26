@@ -9,27 +9,27 @@ module PhcdevworksMembers
 
     # Profile Gravatar
     include Gravtastic
-    gravtastic :member_profile_email
+    gravtastic :profile_email
 
     # Relationships
     has_many :addresses, class_name: 'Member::Address', :dependent => :destroy
     has_many :listings, class_name: 'Member::Listing', :dependent => :destroy
 
     # Form Fields Validation
-    validates :member_profile_first_name,
+    validates :profile_first_name,
       presence: true
 
-    validates :member_profile_last_name,
+    validates :profile_last_name,
       presence: true
 
-    validates :member_profile_title,
+    validates :profile_title,
       presence: true
 
-    validates :member_profile_email,
+    validates :profile_email,
       presence: true,
       format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "Please follow this Email format: *****@********.***" }
 
-    validates :member_profile_phone,
+    validates :profile_phone,
       presence: true,
       format: { with: /\A(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}\z/, message: "Please Follow this Phone Number Format: ***-***-****" }
 
@@ -38,7 +38,7 @@ module PhcdevworksMembers
 
     def phcdev_members_profile_nice_urls
       [
-        [:member_profile_first_name, :member_profile_last_name]
+        [:profile_first_name, :profile_last_name]
       ]
     end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_25_093139) do
+ActiveRecord::Schema.define(version: 2019_10_26_001914) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -119,13 +119,13 @@ ActiveRecord::Schema.define(version: 2019_10_25_093139) do
   end
 
   create_table "phcdevworks_members_member_addresses", force: :cascade do |t|
-    t.string "member_address_line_1"
-    t.string "member_address_line_2"
-    t.string "member_address_city"
-    t.string "member_address_province"
-    t.string "member_address_country"
-    t.string "member_address_postal_code"
-    t.string "member_address_type"
+    t.string "address_line_1"
+    t.string "address_line_2"
+    t.string "address_city"
+    t.string "address_province"
+    t.string "address_country"
+    t.string "address_postal_code"
+    t.string "address_type"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"
@@ -157,12 +157,12 @@ ActiveRecord::Schema.define(version: 2019_10_25_093139) do
   end
 
   create_table "phcdevworks_members_member_profiles", force: :cascade do |t|
-    t.string "member_profile_first_name"
-    t.string "member_profile_last_name"
-    t.string "member_profile_title"
-    t.string "member_profile_email"
-    t.string "member_profile_phone"
-    t.string "member_profile_notes"
+    t.string "profile_first_name"
+    t.string "profile_last_name"
+    t.string "profile_title"
+    t.string "profile_email"
+    t.string "profile_phone"
+    t.string "profile_notes"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"
