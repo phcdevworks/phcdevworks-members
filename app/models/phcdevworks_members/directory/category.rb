@@ -5,7 +5,7 @@ module PhcdevworksMembers
     extend FriendlyId
 
     # Paper Trail Initialize
-    has_paper_trail :class_name => "PhcdevworksMembers::CategoryVersions"
+    has_paper_trail :class_name => "PhcdevworksMembers::DirectoryCategoryVersions"
 
     # Relationships
     has_and_belongs_to_many :listings, class_name: "PhcdevworksMembers::Member::Listing", :join_table => "phcdevworks_members_categories_lstings", :dependent => :destroy

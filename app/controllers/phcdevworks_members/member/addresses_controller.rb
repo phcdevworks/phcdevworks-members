@@ -19,7 +19,7 @@ module PhcdevworksMembers
     # GET /member/addresses/1.json
     def show
       @member_address = member_profile.addresses.find(params[:id])
-      @member_address_versions = PhcdevworksMembers::AddressVersions.where(item_id: @member_address, item_type: 'PhcdevworksMembers::Member::Address')
+      @member_address_versions = PhcdevworksMembers::MemberAddressVersions.where(item_id: @member_address, item_type: 'PhcdevworksMembers::Member::Address')
     end
 
     # GET /member/addresses/new

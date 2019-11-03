@@ -19,7 +19,7 @@ module PhcdevworksMembers
     # GET /member/profiles/1
     # GET /member/profiles/1.json
     def show
-      @member_profile_versions = PhcdevworksMembers::ProfileVersions.where(item_id: @member_profile, item_type: 'PhcdevworksMembers::Member::Profile')
+      @member_profile_versions = PhcdevworksMembers::MemberProfileVersions.where(item_id: @member_profile, item_type: 'PhcdevworksMembers::Member::Profile')
     end
 
     # GET /member/profiles/new

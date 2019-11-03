@@ -5,7 +5,7 @@ module PhcdevworksMembers
     extend FriendlyId
 
     # Paper Trail Initialize
-    has_paper_trail :class_name => 'PhcdevworksMembers::ProfileVersions'
+    has_paper_trail :class_name => 'PhcdevworksMembers::MemberProfileVersions'
 
     # Profile Gravatar
     include Gravtastic

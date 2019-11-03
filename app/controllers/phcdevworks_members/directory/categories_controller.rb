@@ -18,7 +18,7 @@ module PhcdevworksMembers
     # GET /directory/categories/1
     # GET /directory/categories/1.json
     def show
-      @directory_category_versions = PhcdevworksMembers::CategoryVersions.where(item_id: @directory_category, item_type: 'PhcdevworksMembers::Directory::Category')
+      @directory_category_versions = PhcdevworksMembers::DirectoryCategoryVersions.where(item_id: @directory_category, item_type: 'PhcdevworksMembers::Directory::Category')
     end
 
     # GET /directory/categories/new

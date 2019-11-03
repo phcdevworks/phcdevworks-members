@@ -19,7 +19,7 @@ module PhcdevworksMembers
     # GET /member/listings/1.json
     def show
       @meber_listing = member_profile.listings.find(params[:id])
-      @member_listing_versions = PhcdevworksMembers::ListingVersions.where(item_id: @member_listing, item_type: 'PhcdevworksMembers::Member::Listing')
+      @member_listing_versions = PhcdevworksMembers::MemberListingVersions.where(item_id: @member_listing, item_type: 'PhcdevworksMembers::Member::Listing')
     end
 
     # GET /member/listings/new
