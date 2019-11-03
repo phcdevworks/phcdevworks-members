@@ -13,7 +13,7 @@ class CreatePhcdevworksMembersAddressVersions < ActiveRecord::Migration[6.0]
 
     end
 
-    add_index :phcdevworks_members_address_versions, %i(item_type item_id), :name => 'mem_address_versions'
+    add_index :phcdevworks_members_address_versions, %i(item_type item_id), :name => 'member_address_versions'
 
   end
 end

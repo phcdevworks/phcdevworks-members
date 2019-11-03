@@ -13,7 +13,7 @@ class CreatePhcdevworksMembersCategoryVersions < ActiveRecord::Migration[6.0]
 
     end
 
-    add_index :phcdevworks_members_category_versions, %i(item_type item_id), :name => 'mem_category_versions'
+    add_index :phcdevworks_members_category_versions, %i(item_type item_id), :name => 'directory_category_versions'
 
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_03_032163) do
+ActiveRecord::Schema.define(version: 2019_11_03_060156) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 2019_11_03_032163) do
     t.string "whodunnit"
     t.text "object", limit: 1073741823
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "mem_address_versions"
+    t.index ["item_type", "item_id"], name: "member_address_versions"
   end
 
   create_table "phcdevworks_members_categories_lstings", force: :cascade do |t|
@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 2019_11_03_032163) do
     t.string "whodunnit"
     t.text "object", limit: 1073741823
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "mem_category_versions"
+    t.index ["item_type", "item_id"], name: "directory_category_versions"
   end
 
   create_table "phcdevworks_members_directory_categories", force: :cascade do |t|
@@ -115,7 +115,7 @@ ActiveRecord::Schema.define(version: 2019_11_03_032163) do
     t.string "whodunnit"
     t.text "object", limit: 1073741823
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "mem_listing_versions"
+    t.index ["item_type", "item_id"], name: "member_listing_versions"
   end
 
   create_table "phcdevworks_members_member_addresses", force: :cascade do |t|
@@ -177,7 +177,7 @@ ActiveRecord::Schema.define(version: 2019_11_03_032163) do
     t.string "whodunnit"
     t.text "object", limit: 1073741823
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "mem_profile_versions"
+    t.index ["item_type", "item_id"], name: "member_profile_versions"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
