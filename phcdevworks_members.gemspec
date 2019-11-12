@@ -29,14 +29,14 @@ Gem::Specification.new do |spec|
   spec.add_dependency "paper_trail", "~> 10.3"
 
   # Theme Dependencies
-  spec.add_dependency "phcthemes_admin_panel_pack", "~> 1.2.6"
-  spec.add_dependency "phcthemes_web_theme_pack", "~> 1.1.1"
+  spec.add_dependency "phcthemes_admin_panel_pack", "~> 1.3"
+  spec.add_dependency "phcthemes_web_theme_pack", "~> 1.2", ">= 1.2.1"
 
   # Helper Dependencies
-  spec.add_dependency "phcdevworks_core", "~> 1.0.2"
-  spec.add_dependency "phcdevworks_active_menus", "~> 1.0.2"
-  spec.add_dependency "phcdevworks_notifications", "~> 1.0.2"
-  spec.add_dependency "phcdevworks_titleseo", "~> 1.0.2"
+  spec.add_dependency "phcdevworks_core", "~> 1.0.3"
+  spec.add_dependency "phcdevworks_active_menus", "~> 1.0.3"
+  spec.add_dependency "phcdevworks_notifications", "~> 1.0.3"
+  spec.add_dependency "phcdevworks_titleseo", "~> 1.0.3"
 
   # Frontend Dependencies
   spec.add_dependency "friendly_id", "~> 5.3"
@@ -48,7 +48,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "mini_magick", "~> 4.9"
 
   # Security Dependencies
-  spec.add_dependency "phcdevworks_accounts", "~> 1.3", ">= 1.3.3"
+  spec.add_dependency "phcdevworks_accounts", "~> 1.3", ">= 1.3.4"
 
   # Development Dependencies
   spec.add_development_dependency "sqlite3", "~> 1.4"
