@@ -7,7 +7,7 @@ class CreatePhcdevworksMembersMemberProfiles < ActiveRecord::Migration[6.0]
       t.string :profile_title
       t.string :profile_email
       t.string :profile_phone
-      t.string :profile_notes
+      t.text :profile_notes
 
       t.string :slug
       t.string :user_id
