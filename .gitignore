@@ -9,3 +9,4 @@ test/test_app/yarn-error.log
 test/test_app/storage/
 test/test_app/tmp/
 *.gem
+*.gemrc
