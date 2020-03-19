@@ -39,11 +39,12 @@ Gem::Specification.new do |spec|
     spec.add_dependency "phcdevworks_titleseo", "~> 1.0.6"
 
     # Frontend Dependencies
+    spec.add_dependency "wicked", "~> 1.3"
     spec.add_dependency "friendly_id", "~> 5.3"
     spec.add_dependency "gravtastic", "~> 3.2"
 
     # Images & Service Support Dependencies
-    spec.add_dependency "aws-sdk-s3", "~> 1.60"
+    spec.add_dependency "aws-sdk-s3", "~> 1.61"
     spec.add_dependency "google-cloud-storage", "~> 1.25"
     spec.add_dependency "mini_magick", "~> 4.10"
 

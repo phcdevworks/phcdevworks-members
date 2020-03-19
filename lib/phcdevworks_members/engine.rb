@@ -21,6 +21,11 @@ module PhcdevworksMembers
     require "google-cloud-storage"
     require "mini_magick"
 
+    # Frontend Dependencies
+    require "wicked"
+    require "gravtastic"
+    require "friendly_id"
+
     # Load User Accounts
     require "phcdevworks_accounts"
 
