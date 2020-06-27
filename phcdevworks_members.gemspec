@@ -29,14 +29,14 @@ Gem::Specification.new do |spec|
   spec.add_dependency "paper_trail", "~> 10.3"
 
   # Theme Dependencies
-  spec.add_dependency "phcthemes_admin_panel_pack", "~> 1.9"
-  spec.add_dependency "phcthemes_web_theme_pack", "~> 1.9"
+  spec.add_dependency "phcthemes_admin_panel_pack", "~> 1.10"
+  spec.add_dependency "phcthemes_web_theme_pack", "~> 1.10"
 
   # Helper Dependencies
-  spec.add_dependency "phcdevworks_active_menus", "~> 1.4"
-  spec.add_dependency "phcdevworks_core", "~> 1.4"
-  spec.add_dependency "phcdevworks_notifications", "~> 1.4"
-  spec.add_dependency "phcdevworks_titleseo", "~> 2.3"
+  spec.add_dependency "phcdevworks_active_menus", "~> 1.5"
+  spec.add_dependency "phcdevworks_core", "~> 1.5"
+  spec.add_dependency "phcdevworks_notifications", "~> 1.5"
+  spec.add_dependency "phcdevworks_titleseo", "~> 2.4"
 
   # Frontend Dependencies
   spec.add_dependency "wicked", "~> 1.3"
@@ -49,7 +49,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "mini_magick", "~> 4.10"
   
   # Security Dependencies
-  spec.add_dependency "phcdevworks_accounts", "~> 1.10"
+  spec.add_dependency "phcdevworks_accounts", "~> 1.11"
   
   # Development Dependencies
   spec.add_development_dependency "sqlite3", "~> 1.4"
