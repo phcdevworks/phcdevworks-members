@@ -28,9 +28,10 @@ module PhcdevworksMembers
 
     # Load User Accounts
     require "phcdevworks_accounts"
+    require "phcdevworks_core_modules"
 
     # Engine Namespace
-    isolate_namespace PhcdevworksMembers
+    isolate_namespace PhcdevworksPress
 
   end
 end

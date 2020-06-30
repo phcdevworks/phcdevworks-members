@@ -38,6 +38,97 @@
     <!-- -PHC- Sidebar - Sidebar Navigation -->
     <ul class="nav">
 
+        <% if defined?phcdevworks_press %>
+            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Press -->
+            <li class="nav-header">Articles & Blogging</li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-newspaper"></i>
+                    <span>Article Posts</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller("phcdevworks_press/article/posts") %>"><%= link_to("Article Index", phcdevworks_press.article_posts_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_press/article/posts#new") %>"><%= link_to("New Aritcle", phcdevworks_press.new_article_post_path) %></li>
+                </ul>
+            </li>
+            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Press -->
+        <% end %>
+
+        <% if defined?phcdevworks_portfolio %>
+            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Press -->
+            <li class="nav-header">Portfolio</li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-briefcase"></i>
+                    <span>Project List</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller("phcdevworks_portfolio/project/posts") %>"><%= link_to("Project Index", phcdevworks_portfolio.project_posts_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_portfolio/project/posts#new") %>"><%= link_to("New Project", phcdevworks_portfolio.new_project_post_path) %></li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-folders"></i>
+                    <span>Project Types</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller("phcdevworks_portfolio/project/posts") %>"><%= link_to("Project Type", phcdevworks_portfolio.project_types_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_portfolio/project/posts#new") %>"><%= link_to("New Types", phcdevworks_portfolio.new_project_type_path) %></li>
+                </ul>
+            </li>
+            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Press -->
+        <% end %>
+
+        <% if defined?phcdevworks_tutorials %>
+            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Tutorials -->
+            <li class="nav-header">Tutorial Posts</li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-chalkboard-teacher"></i>
+                    <span>Tutorial Posts</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller("phcdevworks_tutorials/tutorials/posts") %>"><%= link_to "Tutorial Index", phcdevworks_tutorials.tutorial_posts_path %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_tutorials/tutorials/posts#new") %>"><%= link_to "New Tutorial", phcdevworks_tutorials.new_tutorial_post_path %></li>
+                </ul>
+            </li>
+            <li class="nav-header">Command Lists & Items</li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-terminal"></i>
+                    <span>Command Lists</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller("phcdevworks_tutorials/command/posts") %>"><%= link_to "List Index", phcdevworks_tutorials.command_posts_path %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_tutorials/command/posts#new") %>"><%= link_to "New List", phcdevworks_tutorials.new_command_post_path %></li>
+                </ul>
+            </li>
+            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Tutorials -->
+        <% end %>
+
+        <% if defined?phcdevworks_core_modules %>
+            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Press -->
+            <li class="nav-header">Core Modules</li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-sitemap"></i>
+                    <span>Categories</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller("phcdevworks_core_modules/modules/categories") %>"><%= link_to("Category Index", phcdevworks_core_modules.modules_categories_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_core_modules/modules/categories#new") %>"><%= link_to("New Category", phcdevworks_core_modules.new_modules_category_path) %></li>
+                </ul>
+            </li>
+            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Press -->
+        <% end %>
+
         <% if defined?phcdevworks_members %>
             <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Members -->
             <li class="nav-header">Membership Manager</li>
@@ -60,78 +151,11 @@
                     <span>Member"s Directory</span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller("phcdevworks_members/directory/categories") %>"><%= link_to("Directory Index", phcdevworks_members.directory_categories_path) %></li>
-                    <li class="<%= phc_menu_active_controller("phcdevworks_members/directory/categories#new") %>"><%= link_to("New Directory Listing", phcdevworks_members.new_directory_category_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_members/modules/categories") %>"><%= link_to("Directory Index", phcdevworks_members.directory_categories_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_members/modules/categories#new") %>"><%= link_to("New Directory Listing", phcdevworks_members.new_directory_category_path) %></li>
                 </ul>
             </li>
             <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Members -->
-        <% end %>
-
-        <% if defined?phcdevworks_portfolio %>
-            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Press -->
-            <li class="nav-header">Portfolio</li>
-            <li class="has-sub">
-                <a href="javascript:;">
-                    <b class="caret"></b>
-                    <i class="fad fa-briefcase"></i>
-                    <span>Project List</span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller("phcdevworks_portfolio/project/posts") %>"><%= link_to("Project Index", phcdevworks_portfolio.project_posts_path) %></li>
-                    <li class="<%= phc_menu_active_controller("phcdevworks_portfolio/project/posts#new") %>"><%= link_to("New Project", phcdevworks_portfolio.new_project_post_path) %></li>
-                </ul>
-            </li>
-            <li class="has-sub">
-                <a href="javascript:;">
-                    <b class="caret"></b>
-                    <i class="fad fa-sitemap"></i>
-                    <span>Project Categories</span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller("phcdevworks_portfolio/project/posts") %>"><%= link_to("Project Category", phcdevworks_portfolio.project_categories_path) %></li>
-                    <li class="<%= phc_menu_active_controller("phcdevworks_portfolio/project/posts#new") %>"><%= link_to("New Category", phcdevworks_portfolio.new_project_category_path) %></li>
-                </ul>
-            </li>
-            <li class="has-sub">
-                <a href="javascript:;">
-                    <b class="caret"></b>
-                    <i class="fad fa-folders"></i>
-                    <span>Project Types</span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller("phcdevworks_portfolio/project/posts") %>"><%= link_to("Project Type", phcdevworks_portfolio.project_types_path) %></li>
-                    <li class="<%= phc_menu_active_controller("phcdevworks_portfolio/project/posts#new") %>"><%= link_to("New Types", phcdevworks_portfolio.new_project_type_path) %></li>
-                </ul>
-            </li>
-            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Press -->
-        <% end %>
-
-        <% if defined?phcdevworks_press %>
-            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Press -->
-            <li class="nav-header">Articles & Blogging</li>
-            <li class="has-sub">
-                <a href="javascript:;">
-                    <b class="caret"></b>
-                    <i class="fad fa-newspaper"></i>
-                    <span>Article Posts</span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller("phcdevworks_press/article/posts") %>"><%= link_to("Article Index", phcdevworks_press.article_posts_path) %></li>
-                    <li class="<%= phc_menu_active_controller("phcdevworks_press/article/posts#new") %>"><%= link_to("New Aritcle", phcdevworks_press.new_article_post_path) %></li>
-                </ul>
-            </li>
-            <li class="has-sub">
-                <a href="javascript:;">
-                    <b class="caret"></b>
-                    <i class="fad fa-sitemap"></i>
-                    <span>Article Categories</span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller("phcdevworks_press/article/categories") %>"><%= link_to("Category Index", phcdevworks_press.article_categories_path) %></li>
-                    <li class="<%= phc_menu_active_controller("phcdevworks_press/article/categories#new") %>"><%= link_to("New Category", phcdevworks_press.new_article_category_path) %></li>
-                </ul>
-            </li>
-            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Press -->
         <% end %>
 
         <% if defined?phcdevworks_scripts %>
@@ -201,46 +225,6 @@
                 </ul>
             </li>
             <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks RealEstate -->
-        <% end %>
-
-        <% if defined?phcdevworks_tutorials %>
-            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Tutorials -->
-            <li class="nav-header">Tutorial Posts</li>
-            <li class="has-sub">
-                <a href="javascript:;">
-                    <b class="caret"></b>
-                    <i class="fad fa-chalkboard-teacher"></i>
-                    <span>Tutorial Posts</span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller("phcdevworks_tutorials/tutorials/posts") %>"><%= link_to "Tutorial Index", phcdevworks_tutorials.tutorial_posts_path %></li>
-                    <li class="<%= phc_menu_active_controller("phcdevworks_tutorials/tutorials/posts#new") %>"><%= link_to "New Tutorial", phcdevworks_tutorials.new_tutorial_post_path %></li>
-                </ul>
-            </li>
-            <li class="has-sub">
-                <a href="javascript:;">
-                    <b class="caret"></b>
-                    <i class="fad fa-sitemap"></i>
-                    <span>Tutorial Categories</span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller("phcdevworks_tutorials/tutorials/categories") %>"><%= link_to "Category Index", phcdevworks_tutorials.tutorial_categories_path %></li>
-                    <li class="<%= phc_menu_active_controller("phcdevworks_tutorials/tutorials/categories#new") %>"><%= link_to "New Category", phcdevworks_tutorials.new_tutorial_category_path %></li>
-                </ul>
-            </li>
-            <li class="nav-header">Command Lists & Items</li>
-            <li class="has-sub">
-                <a href="javascript:;">
-                    <b class="caret"></b>
-                    <i class="fad fa-terminal"></i>
-                    <span>Command Lists</span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller("phcdevworks_tutorials/command/posts") %>"><%= link_to "List Index", phcdevworks_tutorials.command_posts_path %></li>
-                    <li class="<%= phc_menu_active_controller("phcdevworks_tutorials/command/posts#new") %>"><%= link_to "New List", phcdevworks_tutorials.new_command_post_path %></li>
-                </ul>
-            </li>
-            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Tutorials -->
         <% end %>
 
         <% if current_user && current_user.admin? %>
