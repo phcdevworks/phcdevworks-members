@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
   # Helper Dependencies
   spec.add_dependency "phcdevworks_active_menus", "~> 1.5"
   spec.add_dependency "phcdevworks_core", "~> 1.5"
-  spec.add_dependency "phcdevworks_core_modules", "~> 0.4.0"
+  spec.add_dependency "phcdevworks_core_modules", "~> 1.0"
   spec.add_dependency "phcdevworks_notifications", "~> 1.5"
   spec.add_dependency "phcdevworks_titleseo", "~> 2.4"
 
@@ -50,7 +50,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "mini_magick", "~> 4.10"
   
   # Security Dependencies
-  spec.add_dependency "phcdevworks_accounts", "~> 1.11"
+  spec.add_dependency "phcdevworks_accounts", "~> 1.12"
   
   # Development Dependencies
   spec.add_development_dependency "sqlite3", "~> 1.4"
