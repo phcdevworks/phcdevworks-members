@@ -31,7 +31,7 @@ module PhcdevworksMembers
     require "phcdevworks_core_modules"
 
     # Engine Namespace
-    isolate_namespace PhcdevworksPress
+    isolate_namespace PhcdevworksMembers
 
   end
 end

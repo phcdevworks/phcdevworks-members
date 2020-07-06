@@ -113,7 +113,7 @@
         <% end %>
 
         <% if defined?phcdevworks_core_modules %>
-            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Press -->
+            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Core Modules -->
             <li class="nav-header">Core Modules</li>
             <li class="has-sub">
                 <a href="javascript:;">
@@ -122,11 +122,22 @@
                     <span>Categories</span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller("phcdevworks_core_modules/modules/categories") %>"><%= link_to("Category Index", phcdevworks_core_modules.modules_categories_path) %></li>
-                    <li class="<%= phc_menu_active_controller("phcdevworks_core_modules/modules/categories#new") %>"><%= link_to("New Category", phcdevworks_core_modules.new_modules_category_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_core_modules/post/categories") %>"><%= link_to("Category Index", phcdevworks_core_modules.post_categories_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_core_modules/post/categories#new") %>"><%= link_to("New Category", phcdevworks_core_modules.new_post_category_path) %></li>
                 </ul>
             </li>
-            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Press -->
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-analytics"></i>
+                    <span>Marketing</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller("phcdevworks_core_modules/marketing/optimizations") %>"><%= link_to("SEO Data Index", phcdevworks_core_modules.marketing_optimizations_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_core_modules/marketing/optimizations#new") %>"><%= link_to("Add SEO Data", phcdevworks_core_modules.new_marketing_optimization_path) %></li>
+                </ul>
+            </li>
+            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Core Modules -->
         <% end %>
 
         <% if defined?phcdevworks_members %>

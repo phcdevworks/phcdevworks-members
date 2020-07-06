@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_03_060156) do
+ActiveRecord::Schema.define(version: 2020_07_06_113934) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -72,6 +72,58 @@ ActiveRecord::Schema.define(version: 2019_11_03_060156) do
     t.index ["org_id"], name: "index_phcdevworks_accounts_users_on_org_id", unique: true
     t.index ["reset_password_token"], name: "index_phcdevworks_accounts_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_phcdevworks_accounts_users_on_username", unique: true
+  end
+
+  create_table "phcdevworks_core_modules_categories_optimizations", force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "optimization_id"
+  end
+
+  create_table "phcdevworks_core_modules_category_versions", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.text "object", limit: 1073741823
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "core_category_versions"
+  end
+
+  create_table "phcdevworks_core_modules_marketing_optimizations", force: :cascade do |t|
+    t.string "seo_title"
+    t.text "seo_description"
+    t.string "seo_open_graph_post_type"
+    t.string "seo_open_graph_url"
+    t.string "seo_open_graph_title"
+    t.text "seo_open_graph_description"
+    t.string "seo_twitter_post_type"
+    t.string "seo_twitter_url"
+    t.string "seo_twitter_title"
+    t.text "seo_twitter_description"
+    t.string "slug"
+    t.string "user_id"
+    t.string "org_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "phcdevworks_core_modules_optimization_versions", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.text "object", limit: 1073741823
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "core_optimize_versions"
+  end
+
+  create_table "phcdevworks_core_modules_post_categories", force: :cascade do |t|
+    t.string "category_name"
+    t.string "slug"
+    t.string "user_id"
+    t.string "org_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "phcdevworks_members_address_versions", force: :cascade do |t|
@@ -162,7 +214,7 @@ ActiveRecord::Schema.define(version: 2019_11_03_060156) do
     t.string "profile_title"
     t.string "profile_email"
     t.string "profile_phone"
-    t.string "profile_notes"
+    t.text "profile_notes"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"
