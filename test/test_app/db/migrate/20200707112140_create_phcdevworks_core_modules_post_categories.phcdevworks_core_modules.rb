@@ -9,6 +9,8 @@ class CreatePhcdevworksCoreModulesPostCategories < ActiveRecord::Migration[6.0]
       t.string :user_id
       t.string :org_id
 
+      t.string :optimization_id
+
       t.timestamps
 
     end

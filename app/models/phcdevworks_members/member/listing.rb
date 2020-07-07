@@ -9,6 +9,7 @@ module PhcdevworksMembers
 
     # Relationships
     belongs_to :profile, class_name: "PhcdevworksMembers::Member::Profile"
+    belongs_to :optimization, class_name: "PhcdevworksCoreModules::Marketing::Optimization", optional: true
     has_and_belongs_to_many :categories, class_name: "PhcdevworksMembers::Directory::Category", :join_table => "phcdevworks_members_categories_lstings"
 
     # Form Fields Validation

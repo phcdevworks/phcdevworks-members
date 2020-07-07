@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_06_113934) do
+ActiveRecord::Schema.define(version: 2020_07_07_112140) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -74,11 +74,6 @@ ActiveRecord::Schema.define(version: 2020_07_06_113934) do
     t.index ["username"], name: "index_phcdevworks_accounts_users_on_username", unique: true
   end
 
-  create_table "phcdevworks_core_modules_categories_optimizations", force: :cascade do |t|
-    t.integer "category_id"
-    t.integer "optimization_id"
-  end
-
   create_table "phcdevworks_core_modules_category_versions", force: :cascade do |t|
     t.string "item_type", null: false
     t.integer "item_id", null: false
@@ -122,6 +117,7 @@ ActiveRecord::Schema.define(version: 2020_07_06_113934) do
     t.string "slug"
     t.string "user_id"
     t.string "org_id"
+    t.string "optimization_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
