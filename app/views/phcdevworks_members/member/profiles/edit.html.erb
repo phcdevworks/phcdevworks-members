@@ -1,6 +1,6 @@
 <!-- PHCTitleSEO Title Variables -->
 <% phc_title "Members Manager" %>
-<% phc_title_tagline "Update Member Information for " + @member_profile.profile_first_name + " " + @member_profile.profile_last_name %>
+<% phc_title_tagline "Update Member Information for " + @member_profile.member_profile_first_name + " " + @member_profile.member_profile_last_name %>
 <% phc_breadcrumb_one link_to "Dashboard", phcdevworks_members.dashboard_path %>
 <% phc_breadcrumb_two link_to "Member Profiles", phcdevworks_members.member_profiles_path %>
 <% phc_breadcrumb_three yield(:phc_title_tagline) %>

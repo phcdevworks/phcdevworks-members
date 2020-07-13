@@ -11,27 +11,27 @@ module PhcdevworksMembers
     belongs_to :profile, class_name: 'PhcdevworksMembers::Member::Profile'
 
     # Form Fields Validation
-    validates :address_line_1,
+    validates :member_address_line_1,
       presence: true
 
-    validates :address_city,
+    validates :member_address_city,
       presence: true
 
-    validates :address_province,
+    validates :member_address_province,
       presence: true
 
-    validates :address_country,
+    validates :member_address_country,
       presence: true
 
-    validates :address_postal_code,
+    validates :member_address_postal_code,
       presence: true
 
     # Clean URL Define
-    friendly_id :phcdev_members_address_nice_urls, use: [:slugged, :finders]
+    friendly_id :members_address_nice_urls, use: [:slugged, :finders]
 
-    def phcdev_members_address_nice_urls
+    def members_address_nice_urls
       [
-        [:address_type, :address_city, :address_province]
+        [:member_address_type, :member_address_city, :member_address_province]
       ]
     end
 

@@ -80,7 +80,7 @@ module PhcdevworksMembers
 
     # Whitelist
     def directory_category_params
-      params.require(:directory_category).permit(:category_name, :slug, :user_id, :org_id)
+      params.require(:directory_category).permit(:directory_category_name, :slug, :user_id, :org_id)
     end
 
   end

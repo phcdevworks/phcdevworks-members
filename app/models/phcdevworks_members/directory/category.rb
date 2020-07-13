@@ -11,15 +11,15 @@ module PhcdevworksMembers
     has_and_belongs_to_many :listings, class_name: "PhcdevworksMembers::Member::Listing", :join_table => "phcdevworks_members_categories_lstings", :dependent => :destroy
 
     # Form Fields Validation
-    validates :category_name,
+    validates :directory_category_name,
       presence: true
 
     # Clean URL Define
-    friendly_id :phcdev_directory_category_nice_urls, use: [:slugged, :finders]
+    friendly_id :directory_category_nice_urls, use: [:slugged, :finders]
 
-    def phcdev_directory_category_nice_urls
+    def directory_category_nice_urls
       [
-        [:category_name]
+        [:directory_category_name]
       ]
     end
 

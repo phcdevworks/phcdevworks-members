@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_10_093019) do
+ActiveRecord::Schema.define(version: 2020_07_13_030949) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -85,16 +85,16 @@ ActiveRecord::Schema.define(version: 2020_07_10_093019) do
   end
 
   create_table "phcdevworks_core_modules_marketing_optimizations", force: :cascade do |t|
-    t.string "seo_title"
-    t.text "seo_description"
-    t.string "seo_open_graph_post_type"
-    t.string "seo_open_graph_url"
-    t.string "seo_open_graph_title"
-    t.text "seo_open_graph_description"
-    t.string "seo_twitter_post_type"
-    t.string "seo_twitter_url"
-    t.string "seo_twitter_title"
-    t.text "seo_twitter_description"
+    t.string "marketing_optimization_page_title"
+    t.text "marketing_optimization_page_description"
+    t.string "marketing_optimization_og_title"
+    t.text "marketing_optimization_og_description"
+    t.string "marketing_optimization_og_type"
+    t.string "marketing_optimization_og_url"
+    t.string "marketing_optimization_twitter_title"
+    t.text "marketing_optimization_twitter_description"
+    t.string "marketing_optimization_twitter_type"
+    t.string "marketing_optimization_twitter_url"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"
@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 2020_07_10_093019) do
   end
 
   create_table "phcdevworks_core_modules_post_categories", force: :cascade do |t|
-    t.string "category_name"
+    t.string "post_category_name"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"
@@ -128,7 +128,7 @@ ActiveRecord::Schema.define(version: 2020_07_10_093019) do
   end
 
   create_table "phcdevworks_members_directory_categories", force: :cascade do |t|
-    t.string "category_name"
+    t.string "directory_category_name"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"
@@ -157,13 +157,13 @@ ActiveRecord::Schema.define(version: 2020_07_10_093019) do
   end
 
   create_table "phcdevworks_members_member_addresses", force: :cascade do |t|
-    t.string "address_line_1"
-    t.string "address_line_2"
-    t.string "address_city"
-    t.string "address_province"
-    t.string "address_country"
-    t.string "address_postal_code"
-    t.string "address_type"
+    t.string "member_address_line_1"
+    t.string "member_address_line_2"
+    t.string "member_address_city"
+    t.string "member_address_province"
+    t.string "member_address_country"
+    t.string "member_address_postal_code"
+    t.string "member_address_type"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"
@@ -184,17 +184,17 @@ ActiveRecord::Schema.define(version: 2020_07_10_093019) do
   end
 
   create_table "phcdevworks_members_member_listings", force: :cascade do |t|
-    t.string "listing_company_name"
-    t.string "listing_contact_name"
-    t.string "listing_address_line_1"
-    t.string "listing_address_line_2"
-    t.string "listing_city"
-    t.string "listing_country"
-    t.string "listing_province"
-    t.string "listing_postal_code"
-    t.string "listing_phone"
-    t.string "listing_contact_email"
-    t.string "listing_website"
+    t.string "member_listing_company_name"
+    t.string "member_listing_contact_name"
+    t.string "member_listing_address_line_1"
+    t.string "member_listing_address_line_2"
+    t.string "member_listing_city"
+    t.string "member_listing_country"
+    t.string "member_listing_province"
+    t.string "member_listing_postal_code"
+    t.string "member_listing_phone"
+    t.string "member_listing_contact_email"
+    t.string "member_listing_website"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"
@@ -215,12 +215,12 @@ ActiveRecord::Schema.define(version: 2020_07_10_093019) do
   end
 
   create_table "phcdevworks_members_member_profiles", force: :cascade do |t|
-    t.string "profile_first_name"
-    t.string "profile_last_name"
-    t.string "profile_title"
-    t.string "profile_email"
-    t.string "profile_phone"
-    t.text "profile_notes"
+    t.string "member_profile_first_name"
+    t.string "member_profile_last_name"
+    t.string "member_profile_title"
+    t.string "member_profile_email"
+    t.string "member_profile_phone"
+    t.text "member_profile_notes"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"

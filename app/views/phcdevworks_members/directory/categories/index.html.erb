@@ -37,7 +37,7 @@
                     <% @directory_categories.each do |directory_category| %>
                         <li class="list-group-item">
                             <span class="badge badge-default badge-roundless"><%= directory_category.listings.count %></span></span>
-                            <%= link_to directory_category.category_name, directory_category %>
+                            <%= link_to directory_category.directory_category_name, directory_category %>
                         </li>
                     <% end %>
                 </ul>

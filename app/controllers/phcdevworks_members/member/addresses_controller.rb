@@ -88,7 +88,7 @@ module PhcdevworksMembers
 
     # Whitelist
     def member_address_params
-      params.require(:member_address).permit(:address_line_1, :address_line_2, :address_city, :address_province, :address_country, :address_postal_code, :address_type, :profile_id, :slug, :user_id, :org_id)
+      params.require(:member_address).permit(:member_address_line_1, :member_address_line_2, :member_address_city, :member_address_province, :member_address_country, :member_address_postal_code, :member_address_type, :profile_id, :slug, :user_id, :org_id)
     end
 
   end

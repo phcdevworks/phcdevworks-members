@@ -1,8 +1,8 @@
 <!-- PHCTitleSEO Title Variables -->
 <% phc_title "Member Listing Manager" %>
-<% phc_title_tagline "Create a New Listing for " + @member_profile.profile_first_name + " " + @member_profile.profile_last_name %>
+<% phc_title_tagline "Create a New Listing for " + @member_profile.member_profile_first_name + " " + @member_profile.member_profile_last_name %>
 <% phc_breadcrumb_one link_to "Members List", phcdevworks_members.member_profiles_path %>
-<% phc_breadcrumb_two link_to "Listings for " + @member_profile.profile_first_name + " " + @member_profile.profile_last_name, phcdevworks_members.member_profile_listings_path %>
+<% phc_breadcrumb_two link_to "Listings for " + @member_profile.member_profile_first_name + " " + @member_profile.member_profile_last_name, phcdevworks_members.member_profile_listings_path %>
 <% phc_breadcrumb_three yield(:phc_title_tagline) %>
 <!-- PHCTitleSEO Title Variables -->
 

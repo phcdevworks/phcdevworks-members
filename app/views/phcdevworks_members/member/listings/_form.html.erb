@@ -7,62 +7,62 @@
 
 	<!-- Form Input Fields -->
 	<div class="form-group field_with_errors">
-		<%= form.label :listing_company_name, "Company Name" %>
-		<%= form.text_field :listing_company_name, placeholder: "Business/Organization: Name", class: "form-control" %>
+		<%= form.label :member_listing_company_name, "Company Name" %>
+		<%= form.text_field :member_listing_company_name, placeholder: "Business/Organization: Name", class: "form-control" %>
 	</div>
 
 	<div class="form-group field_with_errors">
-		<%= form.label :listing_contact_name, "Contact Name" %>
-		<%= form.text_field :listing_contact_name, placeholder: "Business/Organization: Contact Person", class: "form-control" %>
+		<%= form.label :member_listing_contact_name, "Contact Name" %>
+		<%= form.text_field :member_listing_contact_name, placeholder: "Business/Organization: Contact Person", class: "form-control" %>
 	</div>
 
 	<div class="form-group field_with_errors">
-		<%= form.label :listing_address_line_1, "Address Line 1" %>
-		<%= form.text_field :listing_address_line_1, placeholder: "Location: Street Address", class: "form-control" %>
+		<%= form.label :member_listing_address_line_1, "Address Line 1" %>
+		<%= form.text_field :member_listing_address_line_1, placeholder: "Location: Street Address", class: "form-control" %>
 	</div>
 
 	<div class="form-group field_with_errors">
-		<%= form.label :listing_address_line_2, "Address Line 2" %>
-		<%= form.text_field :listing_address_line_2, placeholder: "Location: Box - Suite - Floor", class: "form-control" %>
+		<%= form.label :member_listing_address_line_2, "Address Line 2" %>
+		<%= form.text_field :member_listing_address_line_2, placeholder: "Location: Box - Suite - Floor", class: "form-control" %>
 	</div>
 
 	<div class="form-group field_with_errors">
-		<%= form.label :listing_city, "City" %>
-		<%= form.text_field :listing_city, placeholder: "Location: City", class: "form-control" %>
+		<%= form.label :member_listing_city, "City" %>
+		<%= form.text_field :member_listing_city, placeholder: "Location: City", class: "form-control" %>
 	</div>
 
 	<div class="form-group field_with_errors">
-		<%= form.label :listing_province, "Province/State" %>
-		<%= form.text_field :listing_province, placeholder: "Location: Province/State", class: "form-control" %>
+		<%= form.label :member_listing_province, "Province/State" %>
+		<%= form.text_field :member_listing_province, placeholder: "Location: Province/State", class: "form-control" %>
 	</div>
 
 	<div class="form-group field_with_errors">
-		<%= form.label :listing_country, "Country" %>
-		<%= form.text_field :listing_country, placeholder: "Country", class: "form-control" %>
+		<%= form.label :member_listing_country, "Country" %>
+		<%= form.text_field :member_listing_country, placeholder: "Country", class: "form-control" %>
 	</div>
 
 	<div class="form-group field_with_errors">
-		<%= form.label :listing_postal_code, "Postal Code" %><br>
-		<%= form.text_field :listing_postal_code, placeholder: "Location: PostalCode", class: "form-control" %>
+		<%= form.label :member_listing_postal_code, "Postal Code" %><br>
+		<%= form.text_field :member_listing_postal_code, placeholder: "Location: PostalCode", class: "form-control" %>
 	</div>
 
 	<div class="form-group field_with_errors">
-		<%= form.label :listing_phone, "Business Phone Number" %>
-		<%= form.text_field :listing_phone, placeholder: "Business/Organization: PhoneNumber (Public)", class: "form-control" %>
+		<%= form.label :member_listing_phone, "Business Phone Number" %>
+		<%= form.text_field :member_listing_phone, placeholder: "Business/Organization: PhoneNumber (Public)", class: "form-control" %>
 	</div>
 
 	<div class="form-group field_with_errors">
-		<%= form.label :listing_contact_email, "Business General Email" %>
-		<%= form.text_field :listing_contact_email, placeholder: "Business/Organization: Email Address (Public)", class: "form-control" %>
+		<%= form.label :member_listing_contact_email, "Business General Email" %>
+		<%= form.text_field :member_listing_contact_email, placeholder: "Business/Organization: Email Address (Public)", class: "form-control" %>
 	</div>
 
 	<div class="form-group field_with_errors">
-		<%= form.label :listing_website, "Business Website" %>
-		<%= form.text_field :listing_website, placeholder: "Business/Organization: Website (Public)", class: "form-control" %>
+		<%= form.label :member_listing_website, "Business Website" %>
+		<%= form.text_field :member_listing_website, placeholder: "Business/Organization: Website (Public)", class: "form-control" %>
 	</div>
 
 	<div class="form-group field_with_errors">
-		<%= form.collection_check_boxes :category_ids, PhcdevworksMembers::Directory::Category.all, :id, :category_name do |listing_category| %>
+		<%= form.collection_check_boxes :category_ids, PhcdevworksMembers::Directory::Category.all, :id, :directory_category_name do |listing_category| %>
 			<%= listing_category.check_box %>
 			<%= listing_category.label %><br>
 		<% end %>

@@ -3,11 +3,11 @@
 		<tbody>
 			<% @directory_category.listings.each do |member_listing| %>
 				<tr>
-					<td><%= link_to member_listing.listing_company_name, phcdevworks_members.member_profile_listing_path(member_listing.profile, member_listing) %></td>
-					<td><%= link_to member_listing.listing_contact_name, phcdevworks_members.member_profile_listing_path(member_listing.profile, member_listing) %></td>
-					<td><%= link_to member_listing.listing_phone, phcdevworks_members.member_profile_listing_path(member_listing.profile, member_listing) %></td>
-					<td><%= link_to member_listing.listing_contact_email, phcdevworks_members.member_profile_listing_path(member_listing.profile, member_listing) %></td>
-					<td><%= link_to member_listing.listing_website, phcdevworks_members.member_profile_listing_path(member_listing.profile, member_listing) %></td>
+					<td><%= link_to member_listing.member_listing_company_name, phcdevworks_members.member_profile_listing_path(member_listing.profile, member_listing) %></td>
+					<td><%= link_to member_listing.member_listing_contact_name, phcdevworks_members.member_profile_listing_path(member_listing.profile, member_listing) %></td>
+					<td><%= link_to member_listing.member_listing_phone, phcdevworks_members.member_profile_listing_path(member_listing.profile, member_listing) %></td>
+					<td><%= link_to member_listing.member_listing_contact_email, phcdevworks_members.member_profile_listing_path(member_listing.profile, member_listing) %></td>
+					<td><%= link_to member_listing.member_listing_website, phcdevworks_members.member_profile_listing_path(member_listing.profile, member_listing) %></td>
 				</tr>
 			<% end %>
 		</tbody>

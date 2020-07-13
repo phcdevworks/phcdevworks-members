@@ -49,10 +49,10 @@
 						<tbody>
 							<% @member_profiles.each do |member_profile| %>
 							<tr>
-							<td><%= link_to member_profile.profile_first_name, member_profile %></td>
-							<td><%= link_to member_profile.profile_last_name, member_profile %></td>
-							<td><%= link_to member_profile.profile_email, member_profile %></td>
-							<td><%= link_to member_profile.profile_phone, member_profile %></td>
+							<td><%= link_to member_profile.member_profile_first_name, member_profile %></td>
+							<td><%= link_to member_profile.member_profile_last_name, member_profile %></td>
+							<td><%= link_to member_profile.member_profile_email, member_profile %></td>
+							<td><%= link_to member_profile.member_profile_phone, member_profile %></td>
 							<td>
 								<div class="btn-group d-flex" role="group">
 									<%= link_to "Member Details", member_profile, class: "btn btn-primary btn-xs" %>

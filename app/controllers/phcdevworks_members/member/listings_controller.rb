@@ -88,7 +88,7 @@ module PhcdevworksMembers
 
     # Whitelist
     def member_listing_params
-      params.require(:member_listing).permit(:listing_company_name, :listing_contact_name, :listing_address_line_1, :listing_address_line_2, :listing_city, :listing_country, :listing_province, :listing_postal_code, :listing_phone, :listing_contact_email, :listing_website, :profile_id, :slug, :user_id, :org_id, category_ids: [])
+      params.require(:member_listing).permit(:member_listing_company_name, :member_listing_contact_name, :member_listing_address_line_1, :member_listing_address_line_2, :member_listing_city, :member_listing_country, :member_listing_province, :member_listing_postal_code, :member_listing_phone, :member_listing_contact_email, :member_listing_website, :profile_id, :slug, :user_id, :org_id, category_ids: [])
     end
 
   end

@@ -1,3 +1,4 @@
+# This migration comes from phcdevworks_members (originally 20190729233450)
 class CreatePhcdevworksMembersMemberListings < ActiveRecord::Migration[6.0]
   def change
     create_table :phcdevworks_members_member_listings do |t|
