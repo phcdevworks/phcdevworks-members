@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
   # Helper Dependencies
   spec.add_dependency "phcdevworks_active_menus", "~> 1.5"
   spec.add_dependency "phcdevworks_core", "~> 1.5"
-  spec.add_dependency "phcdevworks_core_modules", "~> 5.0"
+  spec.add_dependency "phcdevworks_core_modules", "~> 5.1"
   spec.add_dependency "phcdevworks_notifications", "~> 1.5"
   spec.add_dependency "phcdevworks_titleseo", "~> 2.4"
 
@@ -48,10 +48,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency "aws-sdk-s3", "~> 1.67"
   spec.add_dependency "google-cloud-storage", "~> 1.26"
   spec.add_dependency "mini_magick", "~> 4.10"
-  
+
   # Security Dependencies
   spec.add_dependency "phcdevworks_accounts", "~> 1.13"
-  
+
   # Development Dependencies
   spec.add_development_dependency "sqlite3", "~> 1.4"
 
