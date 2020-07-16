@@ -13,6 +13,6 @@ class CreatePhcdevworksCoreModulesMarketingOptimizationVersions < ActiveRecord::
     end
 
     add_index :phcdevworks_core_modules_marketing_optimization_versions, %i(item_type item_id), :name => 'marketing_optimize_versions'
-
+  
   end
 end
