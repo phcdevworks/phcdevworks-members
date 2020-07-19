@@ -1,7 +1,6 @@
 class CreatePhcdevworksMembersMemberProfileVersions < ActiveRecord::Migration[6.0]
   TEXT_BYTES = 1_073_741_823
   def change
-
     create_table :phcdevworks_members_member_profile_versions do |t|
 
       t.string   :item_type, {:null=>false}
