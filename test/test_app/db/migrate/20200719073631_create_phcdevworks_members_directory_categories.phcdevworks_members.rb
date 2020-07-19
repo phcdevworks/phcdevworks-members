@@ -5,6 +5,8 @@ class CreatePhcdevworksMembersDirectoryCategories < ActiveRecord::Migration[6.0]
 
       t.string :directory_category_name
 
+      t.string :optimization_id
+
       t.string :slug
       t.string :user_id
       t.string :org_id

@@ -9,7 +9,7 @@ module PhcdevworksMembers
 
     # Profile Gravatar
     include Gravtastic
-    gravtastic :member_profile_email
+      gravtastic :member_profile_email
 
     # Relationships
     has_many :addresses, class_name: 'Member::Address', :dependent => :destroy

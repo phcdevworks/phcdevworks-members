@@ -9,6 +9,7 @@ module PhcdevworksMembers
 
     # Relationships
     has_and_belongs_to_many :listings, class_name: "PhcdevworksMembers::Member::Listing", :join_table => "phcdevworks_members_categories_lstings", :dependent => :destroy
+    belongs_to :optimization, class_name: "PhcdevworksCoreModules::Marketing::Optimization", optional: true
 
     # Form Fields Validation
     validates :directory_category_name,

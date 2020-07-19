@@ -17,6 +17,8 @@ class CreatePhcdevworksMembersMemberListings < ActiveRecord::Migration[6.0]
       t.string :member_listing_contact_email
       t.string :member_listing_website
 
+      t.string :optimization_id
+
       t.string :slug
       t.string :user_id
       t.string :org_id
