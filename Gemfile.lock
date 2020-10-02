@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    phcdevworks_members (10.2.0)
+    phcdevworks_members (10.2.1)
       aws-sdk-s3 (~> 1.80)
       friendly_id (~> 5.4)
       google-cloud-storage (~> 1.28)
@@ -12,7 +12,7 @@ PATH
       phcdevworks_accounts (~> 2.2)
       phcdevworks_active_menus (~> 2.1)
       phcdevworks_core (~> 2.1)
-      phcdevworks_core_modules (~> 6.1)
+      phcdevworks_core_modules (~> 6.2)
       phcdevworks_notifications (~> 2.1)
       phcdevworks_titleseo (~> 3.1)
       phcthemes_admin_panel_pack (~> 3.0)
@@ -228,7 +228,7 @@ GEM
       phcthemes_admin_panel_pack (~> 3.0)
       phcthemes_web_theme_pack (~> 3.0)
       rails (~> 6.0, >= 6.0.3.3)
-    phcdevworks_core_modules (6.1.0)
+    phcdevworks_core_modules (6.2.0)
       aws-sdk-s3 (~> 1.80)
       friendly_id (~> 5.4)
       google-cloud-storage (~> 1.28)
@@ -236,7 +236,7 @@ GEM
       jbuilder (~> 2.10)
       mini_magick (~> 4.10)
       paper_trail (~> 11.0)
-      phcdevworks_accounts (~> 2.1)
+      phcdevworks_accounts (~> 2.2)
       phcdevworks_active_menus (~> 2.1)
       phcdevworks_core (~> 2.1)
       phcdevworks_notifications (~> 2.1)
