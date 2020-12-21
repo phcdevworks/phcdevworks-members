@@ -26,6 +26,9 @@ module PhcdevworksMembers
     require "gravtastic"
     require "friendly_id"
 
+    # Mailer Dependencies
+    require "mail_form"
+
     # Load User Accounts
     require "phcdevworks_accounts"
     require "phcdevworks_core_modules"

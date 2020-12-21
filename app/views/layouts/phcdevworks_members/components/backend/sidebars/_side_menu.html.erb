@@ -25,7 +25,7 @@
                         <% end %>
                     </li>
                     <li>
-                        <%= link_to phcdevworks_accounts.destroy_user_session_path do %>
+                        <%= link_to phcdevworks_accounts.destroy_user_session_path, method: :delete do %>
                             <i class="fad fa-sign-out-alt"></i> Logout
                         <% end %>
                     </li>
@@ -270,7 +270,7 @@
                     <span>Admin</span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="<%= phc_menu_active_controller("phcdevworks_accounts/admin/users") %>"><%= link_to "User List", phcdevworks_accounts.admin_users_index_path %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_accounts/admin/users") %>"><%= link_to "User List", phcdevworks_accounts.admin_users_all_path %></li>
                 </ul>
             </li>
             <!-- -PHC- Sidebar - Sidebar Navigation - PHCAccounts Admin Options -->
