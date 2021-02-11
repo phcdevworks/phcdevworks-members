@@ -234,7 +234,7 @@
 
         <% if defined?phcdevworks_core_modules %>
             <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Core Modules -->
-            <li class="nav-header">Core Modules</li>
+            <li class="nav-header">Categories</li>
             <li class="has-sub">
                 <a href="javascript:;">
                     <b class="caret"></b>
@@ -246,11 +246,28 @@
                     <li class="<%= phc_menu_active_controller("phcdevworks_core_modules/post/categories#new") %>"><%= link_to("New Category", phcdevworks_core_modules.new_post_category_path) %></li>
                 </ul>
             </li>
+            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Core Modules -->
+        <% end %>
+
+        <% if defined?phcdevworks_core_modules %>
+            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Core Modules -->
+            <li class="nav-header">Marketing</li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-link"></i>
+                    <span>Affiliate Links</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller("phcdevworks_core_modules/affiliate/links") %>"><%= link_to("Affiliate Link Index", phcdevworks_core_modules.affiliate_links_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_core_modules/affiliate/links#new") %>"><%= link_to("New Affiliate Link", phcdevworks_core_modules.new_affiliate_link_path) %></li>
+                </ul>
+            </li>
             <li class="has-sub">
                 <a href="javascript:;">
                     <b class="caret"></b>
                     <i class="fad fa-analytics"></i>
-                    <span>Marketing</span>
+                    <span>Search Optimization</span>
                 </a>
                 <ul class="sub-menu">
                     <li class="<%= phc_menu_active_controller("phcdevworks_core_modules/marketing/optimizations") %>"><%= link_to("SEO Data Index", phcdevworks_core_modules.marketing_optimizations_path) %></li>
