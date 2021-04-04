@@ -277,25 +277,87 @@
             <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Core Modules -->
         <% end %>
 
+        <li class="nav-header">Administration</li>
+        <% if defined?phcdevworks_accounts_stripe && current_user && current_user.admin %>
+            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Accounts Stripe -->
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fab fa-cc-stripe"></i>
+                    <span>Subscriptions</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller("phcdevworks_accounts_stripe/admin/subscriptions#admin_subscription_list") %>"><%= link_to("Subscription Index", phcdevworks_accounts_stripe.admin_subscriptions_path) %></li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-money-check-alt"></i>
+                    <span>Plans</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller("phcdevworks_accounts_stripe/admin/products#admin_products_list") %>"><%= link_to("Product List", phcdevworks_accounts_stripe.admin_products_path) %></li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-users"></i>
+                    <span>Customers</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller("phcdevworks_accounts_stripe/admin/customers#admin_customer_list") %>"><%= link_to("Customer List", phcdevworks_accounts_stripe.admin_customers_path) %></li>
+                </ul>
+            </li>
+            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Accounts Stripe -->
+        <% end %>
+
         <% if current_user && current_user.admin? %>
             <!-- -PHC- Sidebar - Sidebar Navigation - PHCAccounts Admin Options -->
-            <li class="nav-header">User Administration</li>
             <li class="has-sub">
                 <a href="javascript:;">
                     <b class="caret"></b>
                     <i class="fad fa-user"></i>
-                    <span>Admin</span>
+                    <span>User Auth</span>
                 </a>
                 <ul class="sub-menu">
                     <li class="<%= phc_menu_active_controller("phcdevworks_accounts/admin/users") %>"><%= link_to "User List", phcdevworks_accounts.admin_users_all_path %></li>
                 </ul>
             </li>
             <!-- -PHC- Sidebar - Sidebar Navigation - PHCAccounts Admin Options -->
-            <% end %>
-    
-            <% if current_user %>
+        <% end %>
+
+        <li class="nav-header">Your Account</li>
+        <% if defined?phcdevworks_accounts_stripe && current_user %>
+            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Accounts Stripe -->
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-money-check-alt"></i>
+                    <span>Plan Settings</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller("phcdevworks_accounts_stripe/admin/subscriptions#admin_subscription_list") %>"><%= link_to("Your Subscription", phcdevworks_accounts_stripe.user_subscription_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_accounts_stripe/admin/products#admin_product_list") %>"><%= link_to("Switch Subscriptions", phcdevworks_accounts_stripe.user_subscription_path) %></li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fad fa-file-invoice"></i>
+                    <span>Invoices</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="<%= phc_menu_active_controller("phcdevworks_accounts_stripe/user/invoices#admin_customer_list") %>"><%= link_to("Current Invoice", phcdevworks_accounts_stripe.user_invoices_path) %></li>
+                    <li class="<%= phc_menu_active_controller("phcdevworks_accounts_stripe/user/invoices#admin_customer_list") %>"><%= link_to("Past Invoices", phcdevworks_accounts_stripe.admin_customers_path) %></li>
+                </ul>
+            </li>
+            <!-- -PHC- Sidebar - Sidebar Navigation - PHCDevworks Accounts Stripe -->
+        <% end %>
+
+        <% if current_user %>
             <!-- -PHC- Sidebar - Sidebar Navigation - PHCAccounts User Options -->
-            <li class="nav-header">Your Account</li>
             <li class="has-sub">
                 <a href="javascript:;">
                     <b class="caret"></b>
