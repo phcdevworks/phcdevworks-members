@@ -29,8 +29,9 @@ module PhcdevworksMembers
         # Mailer Dependencies
         require "mail_form"
 
-        # Load User Accounts
+        # Load Required PHC Plugins
         require "phcdevworks_accounts"
+        require "phcdevworks_accounts_stripe"
         require "phcdevworks_core_modules"
 
         # Engine Namespace
