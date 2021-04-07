@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "phcdevworks_core", "~> 2.2"
   spec.add_dependency "phcdevworks_notifications", "~> 2.2"
   spec.add_dependency "phcdevworks_titleseo", "~> 3.2"
-  spec.add_dependency "phcdevworks_core_modules", "~> 7.1"
+  spec.add_dependency "phcdevworks_core_modules", "~> 7.2"
 
   # Frontend Dependencies
   spec.add_dependency "wicked", "~> 1.3"
@@ -51,8 +51,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency "mini_magick", "~> 4.11"
 
   # Security Dependencies
-  spec.add_dependency "phcdevworks_accounts", "~> 3.0"
-  spec.add_dependency "phcdevworks_accounts_stripe", "~> 0.1.4"
+  spec.add_dependency "phcdevworks_accounts", "~> 3.1"
+  spec.add_dependency "phcdevworks_accounts_stripe", "~> 0.1.5"
 
   # Development Dependencies
   spec.add_development_dependency "factory_bot_rails", "~> 6.1"
