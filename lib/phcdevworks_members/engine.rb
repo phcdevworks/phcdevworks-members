@@ -31,7 +31,6 @@ module PhcdevworksMembers
 
         # Load Required PHC Plugins
         require "phcdevworks_accounts"
-        require "phcdevworks_accounts_stripe"
         require "phcdevworks_core_modules"
 
         # Engine Namespace

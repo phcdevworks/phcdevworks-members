@@ -1,3 +1,3 @@
 module PhcdevworksMembers
-  VERSION = '11.1.0'
+  VERSION = "11.1.1"
 end
